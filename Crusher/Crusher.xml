@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+<PluginList>
+  <Plugin id="Example Crusher" name="Bit Crusher" category="SDK Examples">
+    <Audio>
+      <Pin name="Signal In" datatype="float" rate="audio" />
+      <Pin name="Downsample" datatype="float" rate="audio" default="0.5" />
+      <Pin name="Signal Out" datatype="float" rate="audio" direction="out" />
+    </Audio>
+  </Plugin>
+</PluginList>
