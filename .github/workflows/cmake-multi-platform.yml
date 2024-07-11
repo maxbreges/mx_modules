@@ -55,4 +55,6 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: ${{ steps.strings.outputs.build-output-dir }}/Crusher/Release/Crusher.sem
-          path: packaging/Crusher.sem
+          path: |
+            **/*.sem
+            **/*.sem/
