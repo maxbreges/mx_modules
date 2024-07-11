@@ -51,7 +51,6 @@ jobs:
         run: cmake --build ${{ steps.strings.outputs.build-output-dir }} --config Release
 
       - name: Upload SEM
-        if: ${{ matrix.name == 'macOS' }}
         uses: actions/upload-artifact@v4
         with:
           name: SEM
