@@ -79,7 +79,7 @@ Save any files that you changed.
 
 12. Go to the GitHub website, find your 'my_modules' repository and check that your changes are there. You should see your new files listed in the repository.
 
-<img src="docs/GithubNewFolder.png" width="200"/>
+<img src="docs/GithubNewFolder.PNG" width="200"/>
 
 13. Click the "Actions" tab to see the progress of the build. If all goes well, you should see a green checkmark next the 'workflow run' (build). If there is a problem, you can click on the "build" link to see the error messages.
 You can click the run link next to the green tick to see more details and to download your SEMs (aka 'Artifacts')
