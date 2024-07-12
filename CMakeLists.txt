@@ -20,7 +20,7 @@ FetchContent_Declare(
   se_sdk3_repo
   GIT_REPOSITORY https://github.com/JeffMcClintock/SynthEdit_SDK
   GIT_TAG origin/master
-  SOURCE_SUBDIR  se_sdk3
+  SOURCE_SUBDIR se_sdk3
 )
 
 FetchContent_MakeAvailable(se_sdk3_repo)
@@ -58,4 +58,3 @@ include(plugin_helper.cmake)
 
 # here is where you list your modules
 add_subdirectory(Crusher)
-
