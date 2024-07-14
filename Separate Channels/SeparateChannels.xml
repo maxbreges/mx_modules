@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PluginList>
+	<Plugin id="mx SeparateChannelsGtr" name="Separate Channels Gtr" category="mx/MIDI">
+		<Audio>
+			<Pin name="MIDI In" datatype="midi"/>
+			<Pin name="Chan 1" datatype="midi" direction="out"/>
+			<Pin name="Chan 2" datatype="midi" direction="out"/>
+			<Pin name="Chan 3" datatype="midi" direction="out"/>
+			<Pin name="Chan 4" datatype="midi" direction="out"/>
+			<Pin name="Chan 5" datatype="midi" direction="out"/>
+			<Pin name="Chan 6" datatype="midi" direction="out"/>
+		</Audio>
+	</Plugin>
+</PluginList>
