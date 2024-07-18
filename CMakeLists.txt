@@ -57,4 +57,5 @@ endif()
 include(plugin_helper.cmake)
 
 # here is where you list your modules
-add_subdirectory(SeparateChannels)
+add_subdirectory(SeparateChannelsGtr)
+add_subdirectory(CounterX)
