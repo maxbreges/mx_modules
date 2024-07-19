@@ -1,4 +1,4 @@
-#include "C:\SynthEditSdk\se_sdk3\mp_sdk_audio.h"
+#include "C:\modules\se_sdk3\mp_sdk_audio.h"
 #include "C:\modules\se_sdk3\mp_midi.h"
 
 SE_DECLARE_INIT_STATIC_FILE(SeparateChannels);
