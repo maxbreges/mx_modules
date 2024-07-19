@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PluginList>
+    <Plugin id="My RectangleX" name="RectangleX" category="mx/Sub-Controls">
+        <GUI graphicsApi="GmpiGui">
+            <Pin name="Corner Radius" datatype="float" default="100" isMinimised="true"/>
+            <Pin name="Top Left" datatype="bool" default="1" isMinimised="true"/>
+            <Pin name="Top Right" datatype="bool" default="1" isMinimised="true"/>
+            <Pin name="Bottom Left" datatype="bool" default="1" isMinimised="true"/>
+            <Pin name="Bottom Right" datatype="bool" default="1" isMinimised="true"/>
+            <Pin name="Top Color" datatype="string" default="FF9A9AAA"/>
+            <Pin name="Bottom Color" datatype="string" default="FF858595"/>
+			<Pin name="Mouse Down" datatype="bool"/>
+			<Pin name="Text" datatype="string" default="G#"/>
+			<Pin name="Text Color" datatype="string" default="FF000000"/>
+			<Pin name="Font" datatype="string" default="Georgia"/>
+			<Pin name="Font Size" datatype="float" default="16"/>
+        </GUI>
+    </Plugin>
+</PluginList>

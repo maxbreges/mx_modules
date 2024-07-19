@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PluginList>
+    <Plugin id="MX GuiOR" name="GuiOR" category="mx/Sub-Controls/Logic">
+        <GUI>
+			<Pin name="OutR" datatype="bool" direction="out"/>
+            <Pin name="OutL" datatype="bool" direction="in"/>
+            <Pin name="1" datatype="bool" direction="out"/>
+            <Pin name="2" datatype="bool" direction="out"/>
+			<Pin name="3" datatype="bool" direction="out"/>
+			<Pin name="4" datatype="bool" direction="out"/>
+			<Pin name="5" datatype="bool" direction="out"/>
+			<Pin name="6" datatype="bool" direction="out"/>
+			<Pin name="7" datatype="bool" direction="out"/>
+			<Pin name="8" datatype="bool" direction="out"/>
+			<Pin name="9" datatype="bool" direction="out"/>
+			<Pin name="10" datatype="bool" direction="out"/>
+			<Pin name="11" datatype="bool" direction="out"/>
+			<Pin name="12" datatype="bool" direction="out"/>
+			<Pin name="13" datatype="bool" direction="out"/>
+			<Pin name="14" datatype="bool" direction="out"/>
+			<Pin name="15" datatype="bool" direction="out"/>
+			<Pin name="16" datatype="bool" direction="out"/>
+			<Pin name="17" datatype="bool" direction="out"/>
+			<Pin name="18" datatype="bool" direction="out"/>
+			<Pin name="19" datatype="bool" direction="out"/>
+			<Pin name="20" datatype="bool" direction="out"/>
+        </GUI>
+    </Plugin>
+</PluginList>
