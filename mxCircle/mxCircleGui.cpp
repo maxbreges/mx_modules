@@ -132,7 +132,7 @@ public:
 
 	}
 
-	virtual int32_t MP_STDCALL setHover(bool isMouseOverMe)
+	virtual int32_t MP_STDCALL setHover(bool isMouseOverMe) override
 	{
 		pinMouseOver = isMouseOverMe;
 
@@ -146,7 +146,7 @@ public:
 	}
 
 	//Mouse Down
-	int32_t mxCircleGui::onPointerDown(int32_t flags, GmpiDrawing_API::MP1_POINT point) override
+	int32_t onPointerDown(int32_t flags, GmpiDrawing_API::MP1_POINT point) override
 	{
 			// Let host handle right-clicks.
 			if ((flags & 0x10) == 0)
@@ -172,7 +172,7 @@ public:
 	}
 
 	//mouse up
-	int32_t mxCircleGui::onPointerUp(int32_t flags, GmpiDrawing_API::MP1_POINT point) override
+	int32_t onPointerUp(int32_t flags, GmpiDrawing_API::MP1_POINT point) override
 
 	{
 		if (!getCapture())
@@ -394,7 +394,7 @@ public:
 		return gmpi::MP_OK;
 	}
 
-	std::string mxCircleGui::acc()
+	std::string acc()
 	{
 		if (pinSharpFlat)
 		{
