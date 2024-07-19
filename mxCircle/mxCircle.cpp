@@ -6,7 +6,6 @@ using namespace gmpi;
 class mxCircle final : public MpBase2
 
 {
-
 private:
 	
 	BoolOutPin pinToGui;
