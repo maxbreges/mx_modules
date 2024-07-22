@@ -1,3 +1,6 @@
+#maxbreges's repository for storing code of SynthEdit modules
+
+FORKED FROM https://github.com/JeffMcClintock/sem_example
 # sem_example
 Example of building a SynthEdit module for Windows and macOS on GitHub
 
