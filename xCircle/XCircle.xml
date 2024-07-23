@@ -8,13 +8,14 @@
         <GUI graphicsApi="GmpiGui">
 			<Pin name="Mouse Over" datatype="bool" direction="out" private="false"/>
 			<Pin name="Mouse Down" datatype="bool"/>
+			<Pin name="ToDSP" datatype="bool" parameterId="0"/>
             <Pin name="Color" datatype="string" default="FF005555"/>			
         </GUI>
 		<Audio>
-			<Pin name="ToGui" datatype="bool" direction="out" parameterId="0"/>
+			<Pin name="FromGui" datatype="bool" direction="in" parameterId="0"/>
+			<Pin name="ToGui" datatype="bool" direction="out" parameterId="1"/>
 			<Pin name="Gate In" datatype="bool"/>
-			<Pin name="MIDI Out" datatype="midi" direction="out"/>
-			<Pin name="FromGui" datatype="bool" direction="in" parameterId="1"/>
+			<Pin name="MIDI Out" datatype="midi" direction="out"/>			
 			<Pin name="Chan" datatype="int" default="1" isMinimised="true"/>
 			<Pin name="Note" datatype="int" default="44" isMinimised="true"/>
 		</Audio>

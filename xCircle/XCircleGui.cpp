@@ -17,13 +17,19 @@ class XCircleGui final : public gmpi_gui::MpGuiGfxBase
 		invalidateRect();
 	}
 
+	void onToDSP()
+	{
+		invalidateRect();
+	}
+
  	void onSetColor()
 	{
 		invalidateRect();
 	}
 
 	BoolGuiPin pinMouseOver;
-	BoolGuiPin pinMouseDown;	
+	BoolGuiPin pinMouseDown;
+	BoolGuiPin pinToDSP;
  	StringGuiPin pinColor;
 
 public:
@@ -31,6 +37,7 @@ public:
 	{
 		initializePin(pinMouseOver, static_cast<MpGuiBaseMemberPtr2>(&XCircleGui::onSetMouseOver));
 		initializePin(pinMouseDown, static_cast<MpGuiBaseMemberPtr2>(&XCircleGui::onSetMouseDown));
+		initializePin(pinToDSP, static_cast<MpGuiBaseMemberPtr2>(&XCircleGui::onToDSP));
 		initializePin( pinColor, static_cast<MpGuiBaseMemberPtr2>(&XCircleGui::onSetColor) );
 	}
 
@@ -57,7 +64,7 @@ public:
 			setCapture();
 
 			if (pinMouseOver && 0x10)
-				
+				pinToDSP = true;
 			pinMouseDown = true;
 		}
 
@@ -78,6 +85,7 @@ public:
 		releaseCapture();
 
 		pinMouseDown = false;
+		pinToDSP = false;
 
 		invalidateRect();
 

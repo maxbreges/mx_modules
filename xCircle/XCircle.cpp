@@ -7,17 +7,12 @@ class XCircle final : public MpBase2
 
 {
 private:
-
+	BoolInPin pinFromGui;
 	BoolOutPin pinToGui;
 
 public:
 	BoolInPin pinGateIn;
 	MidiOutPin pinMIDIOut;
-private:
-
-	BoolInPin pinFromGui;
-
-public:
 	IntInPin pinChan;
 	IntInPin pinNote;
 
@@ -25,10 +20,10 @@ public:
 
 	XCircle()
 	{
+		initializePin(pinFromGui);
 		initializePin(pinToGui);
 		initializePin(pinGateIn);
-		initializePin(pinMIDIOut);
-		initializePin(pinFromGui);
+		initializePin(pinMIDIOut);		
 		initializePin(pinChan);
 		initializePin(pinNote);
 	}
