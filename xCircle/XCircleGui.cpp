@@ -29,6 +29,11 @@ class XCircleGui final : public gmpi_gui::MpGuiGfxBase
 		invalidateRect();
 	}
 
+	void onTrigGui()
+	{
+		invalidateRect();
+	}
+
  	void onSetColor()
 	{
 		invalidateRect();
@@ -43,13 +48,49 @@ class XCircleGui final : public gmpi_gui::MpGuiGfxBase
 		invalidateRect();
 	}
 
+	void onSetText()
+	{
+		invalidateRect();
+	}
+
+	void onSetTextb()
+	{
+		invalidateRect();
+	}
+	void onSetAcc()
+	{
+		invalidateRect();
+	}
+
+	void onSetTextColor()
+	{
+		invalidateRect();
+	}
+
+	void onSetStyle()
+	{
+		invalidateRect();
+	}
+
+	void onSetFontSize()
+	{
+		invalidateRect();
+	}
+
 	BoolGuiPin pinMouseOver;
 	BoolGuiPin pinMouseDown;
 	BoolGuiPin pinORIn;
 	BoolGuiPin pinToDSP;
+	BoolGuiPin pinTrigGui;
 	StringGuiPin pinColor0;
  	StringGuiPin pinColor;
 	FloatGuiPin pinTopCircleSize;
+	StringGuiPin pinText;
+	StringGuiPin pinTextb;
+	BoolGuiPin pinSharpFlat;
+	StringGuiPin pinTextColor;
+	StringGuiPin pinFont;
+	FloatGuiPin pinFontSize;
 
 public:
 	XCircleGui()
@@ -58,9 +99,17 @@ public:
 		initializePin(pinMouseDown, static_cast<MpGuiBaseMemberPtr2>(&XCircleGui::onSetMouseDown));
 		initializePin(pinORIn, static_cast<MpGuiBaseMemberPtr2>(&XCircleGui::onSetORIn));
 		initializePin(pinToDSP, static_cast<MpGuiBaseMemberPtr2>(&XCircleGui::onToDSP));
+		initializePin(pinTrigGui, static_cast<MpGuiBaseMemberPtr2>(&XCircleGui::onTrigGui));
 		initializePin(pinColor0, static_cast<MpGuiBaseMemberPtr2>(&XCircleGui::onSetColor));
 		initializePin(pinColor, static_cast<MpGuiBaseMemberPtr2>(&XCircleGui::onSetColor) );
 		initializePin(pinTopCircleSize, static_cast<MpGuiBaseMemberPtr2>(&XCircleGui::onSetTopCircleSize));
+		initializePin(pinText, static_cast<MpGuiBaseMemberPtr2>(&XCircleGui::onSetText));
+		initializePin(pinTextb, static_cast<MpGuiBaseMemberPtr2>(&XCircleGui::onSetTextb));
+		initializePin(pinSharpFlat, static_cast<MpGuiBaseMemberPtr2>(&XCircleGui::onSetAcc));
+		initializePin(pinTextColor, static_cast<MpGuiBaseMemberPtr2>(&XCircleGui::onSetTextColor));
+		initializePin(pinFont, static_cast<MpGuiBaseMemberPtr2>(&XCircleGui::onSetStyle));
+		initializePin(pinFontSize, static_cast<MpGuiBaseMemberPtr2>(&XCircleGui::onSetFontSize));
+
 
 	}
 
@@ -154,11 +203,11 @@ public:
 		float thickness;
 		calcDimensions(center, radius, thickness);
 
-		if ((pinORIn && pinMouseOver) || (pinMouseDown && pinMouseOver))// || (pinTrigGui))
+		if ((pinORIn && pinMouseOver) || (pinMouseDown && pinMouseOver) || (pinTrigGui))
 		{
-			auto brushBackground = g.CreateSolidColorBrush(Color::Black);//FromHexString(pinBgColor));
+			auto brushBackground = g.CreateSolidColorBrush(Color::FromHexString(pinTextColor));
 
-			if ((!pinORIn) || (!pinMouseOver) || (!pinMouseDown))// || (!pinTrigGui))
+			if ((!pinORIn) || (!pinMouseOver) || (!pinMouseDown) || (!pinTrigGui))
 			{
 				auto brush = g.CreateSolidColorBrush(Color::FromHexString(pinColor0));
 			}
@@ -178,11 +227,11 @@ public:
 		float thickness1;
 		calcDimensions1(center1, radius1, thickness1);
 
-		if ((pinORIn) && (pinMouseOver) || (pinMouseDown) && (pinMouseOver))// || (pinTrigGui))
+		if ((pinORIn && pinMouseOver) || (pinMouseDown && pinMouseOver) || (pinTrigGui))
 		{
 			auto brushTopColor = g.CreateSolidColorBrush(Color::FromHexString(pinColor));
 
-			if ((!pinORIn) || (!pinMouseOver) || (!pinMouseDown))// || (!pinTrigGui))
+			if ((!pinORIn) || (!pinMouseOver) || (!pinMouseDown) || (!pinTrigGui))
 			{
 				auto brush = g.CreateSolidColorBrush(Color::FromHexString(pinColor0));
 			}
@@ -194,8 +243,67 @@ public:
 			}
 		}
 
+
+		//drawing text
+		float font_size = -1;
+
+		if (pinFontSize >= 0.01f)
+		{
+			if (pinFontSize <= 10.f)
+			{
+				font_size = (pinFontSize * 0.16f) * radius;
+			}
+			if (pinFontSize > 10.f)
+			{
+				font_size = 10.f;
+			}
+			if (pinFontSize < 0.01f)
+			{
+				font_size = 0.01f;
+			}
+		}
+		else
+		{
+			font_size = radius;
+		}
+
+		//delivering font
+		std::string str = { pinFont };
+		const char* fontFace = str.c_str();
+		TextFormat textFormat = g.GetFactory().CreateTextFormat(font_size, fontFace);
+
+		textFormat.SetParagraphAlignment(ParagraphAlignment::Center),
+
+			textFormat.SetTextAlignment(TextAlignment::Center);
+
+		if ((pinORIn && pinMouseOver) || (pinMouseDown && pinMouseOver) || (pinTrigGui))
+		{
+			auto brush = g.CreateSolidColorBrush(Color::FromHexString(pinTextColor));
+
+			if ((!pinORIn) || (!pinMouseOver) || (!pinMouseDown) || (!pinTrigGui))
+			{
+				auto brush = g.CreateSolidColorBrush(Color::FromHexString(pinColor0));
+			}
+
+			auto displayText = acc();
+
+			g.DrawTextU(displayText, textFormat, getRect(), brush, 0);
+
+		}
+
 		return gmpi::MP_OK;
 	}
+
+	std::string acc()
+	{
+		if (pinSharpFlat)
+		{
+			return WStringToUtf8(pinTextb.getValue());
+		}
+		else
+			return WStringToUtf8(pinText.getValue());
+	}
+
 };
 
 namespace

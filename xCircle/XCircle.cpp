@@ -28,7 +28,6 @@ public:
 		initializePin(pinNote);
 	}
 
-
 	void onSetPins(void)  // one or more pins_ updated.  Check pin update flags to determin which ones.
 	{
 		if (pinGateIn.isUpdated())
