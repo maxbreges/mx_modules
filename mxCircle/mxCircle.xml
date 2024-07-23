@@ -10,7 +10,7 @@
             <Pin name="AnimPos +ALT" datatype="float" private="true"/>
 			<Pin name="Color0" datatype="string" default="00FFFFFF" private="true"/>
             <Pin name="Bg Color" datatype="string" default="FF000000" isMinimised="true"/>
-            <Pin name="Top Color" datatype="string" default="FFFFFFFF" isMinimised="true"/>
+            <Pin name="Top Color" datatype="string" default="FFFFFFFF" isMinimised="false"/>
             <Pin name="Top Circle Size" datatype="float" default="0.93" isMinimised="true"/>
             <Pin name="Mouse Down" datatype="bool"/>
 			<Pin name="Mouse Over" datatype="bool" direction="out" private="false"/>
@@ -18,8 +18,8 @@
 			<Pin name="Textb" datatype="string" direction="in" default="Ab" isMinimised="true"/>
 			<Pin name="#/b" datatype="bool" direction="in"/>
 			<Pin name="Text Color" datatype="string" direction="in" default="FF000000" isMinimised="true"/>
-			<Pin name="Font" datatype="string" direction="in" default="Times New Roman" isMinimised="true"/>
-			<Pin name="Font Size" datatype="float" direction="in" default="-1" isMinimised="true"/>
+			<Pin name="Font" datatype="string" direction="in" default="Times New Roman" isMinimised="false"/>
+			<Pin name="Font Size" datatype="float" direction="in" default="-1" isMinimised="false"/>
 			<Pin name="OR In" datatype="bool"/>
 			<Pin name="TrigGui" datatype="bool" direction="in" parameterId="0"/>
 			<Pin name="ToDSP" datatype="bool" parameterId="1"/>
