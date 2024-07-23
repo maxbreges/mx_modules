@@ -146,7 +146,7 @@ public:
 	}
 
 	//Mouse Down
-	int32_t mxCircleGui::onPointerDown(int32_t flags, GmpiDrawing_API::MP1_POINT point)
+	int32_t mxCircleGui::onPointerDown(int32_t flags, GmpiDrawing_API::MP1_POINT point) override
 	{
 			// Let host handle right-clicks.
 			if ((flags & 0x10) == 0)
@@ -172,7 +172,7 @@ public:
 	}
 
 	//mouse up
-	int32_t mxCircleGui::onPointerUp(int32_t flags, GmpiDrawing_API::MP1_POINT point)
+	int32_t mxCircleGui::onPointerUp(int32_t flags, GmpiDrawing_API::MP1_POINT point) override
 
 	{
 		if (!getCapture())
@@ -301,7 +301,7 @@ public:
 		float thickness;
 		calcDimensions(center, radius, thickness);
 
-		if ((pinORIn) && (pinMouseOver) || (pinMouseDown) && (pinMouseOver) || (pinTrigGui))
+		if ((pinORIn && pinMouseOver) || (pinMouseDown && pinMouseOver) || (pinTrigGui))
 		{
 			auto brushBackground = g.CreateSolidColorBrush(Color::FromHexString(pinBgColor));
 
@@ -325,7 +325,7 @@ public:
 		float thickness1;
 		calcDimensions1(center1, radius1, thickness1);
 
-		if ((pinORIn) && (pinMouseOver) || (pinMouseDown) && (pinMouseOver) || (pinTrigGui))
+		if ((pinORIn && pinMouseOver) || (pinMouseDown && pinMouseOver) || (pinTrigGui))
 		{
 			auto brushTopColor = g.CreateSolidColorBrush(Color::FromHexString(pinTopColor));
 
@@ -376,7 +376,7 @@ public:
 
 			textFormat.SetTextAlignment(TextAlignment::Center);
 
-		if ((pinORIn) && (pinMouseOver) || (pinMouseDown) && (pinMouseOver) || (pinTrigGui))
+		if ((pinORIn && pinMouseOver) || (pinMouseDown && pinMouseOver) || (pinTrigGui))
 		{
 			auto brush = g.CreateSolidColorBrush(Color::FromHexString(pinTextColor));
 
