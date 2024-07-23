@@ -51,5 +51,5 @@ public:
 
 namespace
 {
-	auto r = Register<XCircleGui>::withId(L"xCircle");
+	auto r = Register<XCircleGui>::withId(L"SE Vector Circle");
 }

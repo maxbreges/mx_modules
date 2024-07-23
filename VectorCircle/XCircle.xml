@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PluginList>
-    <Plugin id="xCircle" name="xCircle" category="mx/Sub-Controls">
+    <Plugin id="SE Vector Circle" name="Vector Circle" category="mx/Sub-Controls">
         <GUI graphicsApi="GmpiGui">
             <Pin name="Color" datatype="string" default="FF005555"/>
         </GUI>
