@@ -8,8 +8,11 @@
         <GUI graphicsApi="GmpiGui">
 			<Pin name="Mouse Over" datatype="bool" direction="out" private="false"/>
 			<Pin name="Mouse Down" datatype="bool"/>
+			<Pin name="OR In" datatype="bool"/>
 			<Pin name="ToDSP" datatype="bool" parameterId="0"/>
-            <Pin name="Color" datatype="string" default="FF005555"/>			
+			<Pin name="Color0" datatype="string" default="00FFFFFF" private="true"/>
+			<Pin name="Color" datatype="string" default="FFFFFFFF"/>
+			<Pin name="Top Circle Size (0-1)" datatype="float" default="0.93" isMinimised="true"/>
         </GUI>
 		<Audio>
 			<Pin name="FromGui" datatype="bool" direction="in" parameterId="0"/>

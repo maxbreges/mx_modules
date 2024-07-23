@@ -1,8 +1,10 @@
 #include "mp_sdk_gui2.h"
 #include "Drawing.h"
+#include "../shared/unicode_conversion.h"
 
 using namespace gmpi;
 using namespace GmpiDrawing;
+using namespace JmUnicodeConversions;
 
 class XCircleGui final : public gmpi_gui::MpGuiGfxBase
 {	
@@ -17,6 +19,11 @@ class XCircleGui final : public gmpi_gui::MpGuiGfxBase
 		invalidateRect();
 	}
 
+	void onSetORIn()
+	{
+		invalidateRect();
+	}
+
 	void onToDSP()
 	{
 		invalidateRect();
@@ -27,23 +34,44 @@ class XCircleGui final : public gmpi_gui::MpGuiGfxBase
 		invalidateRect();
 	}
 
+	void onSetTopCircleSize()
+	{
+		if (pinTopCircleSize > 1.f)
+			pinTopCircleSize = 1.f;
+		if (pinTopCircleSize < 0.f)
+			pinTopCircleSize = 0.f;
+		invalidateRect();
+	}
+
 	BoolGuiPin pinMouseOver;
 	BoolGuiPin pinMouseDown;
+	BoolGuiPin pinORIn;
 	BoolGuiPin pinToDSP;
+	StringGuiPin pinColor0;
  	StringGuiPin pinColor;
+	FloatGuiPin pinTopCircleSize;
 
 public:
 	XCircleGui()
 	{
 		initializePin(pinMouseOver, static_cast<MpGuiBaseMemberPtr2>(&XCircleGui::onSetMouseOver));
 		initializePin(pinMouseDown, static_cast<MpGuiBaseMemberPtr2>(&XCircleGui::onSetMouseDown));
+		initializePin(pinORIn, static_cast<MpGuiBaseMemberPtr2>(&XCircleGui::onSetORIn));
 		initializePin(pinToDSP, static_cast<MpGuiBaseMemberPtr2>(&XCircleGui::onToDSP));
-		initializePin( pinColor, static_cast<MpGuiBaseMemberPtr2>(&XCircleGui::onSetColor) );
+		initializePin(pinColor0, static_cast<MpGuiBaseMemberPtr2>(&XCircleGui::onSetColor));
+		initializePin(pinColor, static_cast<MpGuiBaseMemberPtr2>(&XCircleGui::onSetColor) );
+		initializePin(pinTopCircleSize, static_cast<MpGuiBaseMemberPtr2>(&XCircleGui::onSetTopCircleSize));
+
 	}
 
 	virtual int32_t MP_STDCALL setHover(bool isMouseOverMe) override
 	{
 		pinMouseOver = isMouseOverMe;
+
+		if (!pinMouseOver)
+			pinToDSP = false;
+		if (pinORIn && pinMouseOver)
+			pinToDSP = true;
 
 		invalidateRect();
 
@@ -92,7 +120,9 @@ public:
 		return gmpi::MP_OK;
 	}
 
-//circles
+	//circles
+	//bg circle dimensions
+
 	void calcDimensions(Point& center, float& radius, float& thickness)
 	{
 		auto r = getRect();
@@ -102,21 +132,66 @@ public:
 		thickness = radius * 0.2f;
 	}
 
+	//top circle dimensions
+
+	void calcDimensions1(Point& center1, float& radius1, float& thickness1)
+	{
+		float mult;
+		auto r1 = getRect();
+		mult = (pinTopCircleSize) * 0.4f;
+		center1 = Point((r1.left + r1.right) * 0.5f, (r1.top + r1.bottom) * 0.5f);
+		radius1 = (std::min)(r1.getWidth(), r1.getHeight()) * mult;
+		thickness1 = radius1 * 0.2f;
+	}
+
 	int32_t MP_STDCALL OnRender(GmpiDrawing_API::IMpDeviceContext* drawingContext ) override
 	{
 		Graphics g(drawingContext);
 
+		//bg circle
 		Point center;
 		float radius;
 		float thickness;
 		calcDimensions(center, radius, thickness);
 
-		auto brushBackground = g.CreateSolidColorBrush(Color::FromHexString(pinColor));
-
-		Size circleSize1(radius, radius);
-
+		if ((pinORIn && pinMouseOver) || (pinMouseDown && pinMouseOver))// || (pinTrigGui))
 		{
-			g.FillCircle(center, radius + thickness * 0.5f, brushBackground);
+			auto brushBackground = g.CreateSolidColorBrush(Color::Black);//FromHexString(pinBgColor));
+
+			if ((!pinORIn) || (!pinMouseOver) || (!pinMouseDown))// || (!pinTrigGui))
+			{
+				auto brush = g.CreateSolidColorBrush(Color::FromHexString(pinColor0));
+			}
+
+			Size circleSize1(radius, radius);
+
+			{
+				g.FillCircle(center, radius + thickness * 0.5f, brushBackground);
+			}
+
+		}
+
+		//top circle
+
+		Point center1;
+		float radius1;
+		float thickness1;
+		calcDimensions1(center1, radius1, thickness1);
+
+		if ((pinORIn) && (pinMouseOver) || (pinMouseDown) && (pinMouseOver))// || (pinTrigGui))
+		{
+			auto brushTopColor = g.CreateSolidColorBrush(Color::FromHexString(pinColor));
+
+			if ((!pinORIn) || (!pinMouseOver) || (!pinMouseDown))// || (!pinTrigGui))
+			{
+				auto brush = g.CreateSolidColorBrush(Color::FromHexString(pinColor0));
+			}
+
+			Size circleSize1(radius1, radius1);
+
+			{
+				g.FillCircle(center1, radius1 + thickness1 * 0.5f, brushTopColor);
+			}
 		}
 
 		return gmpi::MP_OK;
