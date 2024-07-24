@@ -4,6 +4,7 @@
 
 using namespace gmpi;
 using namespace GmpiDrawing;
+using namespace GmpiDrawing_API;
 using namespace JmUnicodeConversions;
 
 class XCircleGui final : public gmpi_gui::MpGuiGfxBase

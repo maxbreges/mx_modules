@@ -12,14 +12,14 @@
 			<Pin name="ToDSP" datatype="bool" parameterId="0"/>
 			<Pin name="TrigGui" datatype="bool" direction="in" parameterId="1"/>
 			<Pin name="Color0" datatype="string" default="00FFFFFF" private="true"/>
-			<Pin name="Color" datatype="string" default="FFFFFFFF"/>
+			<Pin name="Color" datatype="string" default="FFFF55AF"/>
 			<Pin name="Top Circle Size (0-1)" datatype="float" default="0.93" isMinimised="true"/>
 			<Pin name="Text#" datatype="string" direction="in" default="G#" isMinimised="true"/>
 			<Pin name="Textb" datatype="string" direction="in" default="Ab" isMinimised="true"/>
 			<Pin name="#/b" datatype="bool" direction="in"/>
 			<Pin name="Text Color" datatype="string" direction="in" default="FF000000" isMinimised="true"/>
 			<Pin name="Font" datatype="string" direction="in" default="Times New Roman" isMinimised="false"/>
-			<Pin name="Font Size" datatype="float" direction="in" default="-1" isMinimised="false"/>
+			<Pin name="Font Size" datatype="float" direction="in" default="7" isMinimised="false"/>
 		</GUI>
 		<Audio>
 			<Pin name="FromGui" datatype="bool" direction="in" parameterId="0"/>
