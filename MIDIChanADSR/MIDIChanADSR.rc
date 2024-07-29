@@ -52,7 +52,7 @@ END
 // GMPXML
 //
 
-IDR_GMPXML1             GMPXML                  "SeparateChannels.xml"
+IDR_GMPXML1             GMPXML                  "MIDIChanADSR.xml"
 #endif    // English (U.S.) resources
 /////////////////////////////////////////////////////////////////////////////
 
