@@ -3,7 +3,6 @@
 #define _USE_MATH_DEFINES
 #include <math.h>
 
-
 using namespace gmpi;
 using namespace gmpi_gui;
 using namespace GmpiDrawing;
@@ -307,6 +306,7 @@ public:
 
 		g.FillGeometry(geometry, gradientBrush);
 
+		return gmpi::MP_OK;
 	}
 
 };
