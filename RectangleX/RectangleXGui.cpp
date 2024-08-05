@@ -207,7 +207,7 @@ public:
 		return Color(se_sdk::FastGamma::sRGB_to_float((hex >> 16) & 0xff), se_sdk::FastGamma::sRGB_to_float((hex >> 8) & 0xff), se_sdk::FastGamma::sRGB_to_float(hex & 0xff), alpha);
 	}
 
-	int32_t RectangleXGui::OnRender(GmpiDrawing_API::IMpDeviceContext* drawingContext)
+	int32_t OnRender(GmpiDrawing_API::IMpDeviceContext* drawingContext)
 	{
 		Graphics g(drawingContext);
 
