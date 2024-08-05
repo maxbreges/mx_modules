@@ -190,7 +190,7 @@ public:
 	}
 
 
-	void RectangleXGui::onRedraw()
+	void onRedraw()
 	{
 		invalidateRect();
 	}
@@ -307,6 +307,7 @@ public:
 
 		g.FillGeometry(geometry, gradientBrush);
 
+		return;
 	}
 
 };
