@@ -307,7 +307,6 @@ public:
 
 		g.FillGeometry(geometry, gradientBrush);
 
-		return;
 	}
 
 };
