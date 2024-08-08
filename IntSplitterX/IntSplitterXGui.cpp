@@ -1,9 +1,6 @@
 #include "mp_sdk_gui2.h"
-#include <vector>
 
 using namespace gmpi;
-
-//GMPI_REGISTER_GUI(MP_SUB_TYPE_GUI2, IntSplitterGui, L"IntSplitterX");
 
 template<class T>
 class GenericSplitterGui : public gmpi_gui::MpGuiInvisibleBase
