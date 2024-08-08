@@ -7,5 +7,4 @@ build_gmpi_plugin(
 	HAS_GUI
 	SOURCE_FILES
 	  IntSplitterXGui.cpp
-	  IntSplitterXGui.h
 )
