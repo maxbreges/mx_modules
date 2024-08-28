@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PluginList>
+    <Plugin id="Int to Bool" name="Int to Bool" alwaysExport="true" category="mx/Conversion" helpUrl="converters.htm">
+        <Audio>
+            <Pin name="Int Val" datatype="int"/>
+            <Pin name="Bool Val" datatype="bool" direction="out"/>
+        </Audio>
+    </Plugin>
+</PluginList>
