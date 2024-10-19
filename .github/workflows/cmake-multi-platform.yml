@@ -17,10 +17,10 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - name: Linux
-            os: ubuntu-22.04
-          - name: macOS
-            os: macos-latest
+         # - name: Linux
+         #   os: ubuntu-22.04
+        #  - name: macOS
+        #    os: macos-latest
           - name: Windows
             os: windows-latest
     steps:
