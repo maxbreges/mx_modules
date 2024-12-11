@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PluginList>
+    <Plugin id="JimRiver" name="Jim River" category="Jim River/MIDI">
+        <Audio>
+            <Pin name="MIDI In" datatype="midi"/>
+			<Pin name="Transpose" datatype="enum" metadata="-2,-1,0,1,2,3,4" default="2"/>
+            <Pin name="Kick" datatype="bool" direction="out"/>
+            <Pin name="Snare" datatype="bool" direction="out"/>
+			<Pin name="Tom" datatype="bool" direction="out"/>
+			<Pin name="Hi Hat" datatype="bool" direction="out"/>
+        </Audio>
+    </Plugin>
+</PluginList>
