@@ -21,8 +21,12 @@ jobs:
          #   os: ubuntu-22.04
           - name: macOS
             os: macos-latest
-          - name: Windows
+          - name: Windows (64-bit)
             os: windows-latest
+          - name: Windows (32-bit)
+            os: windows-latest
+            arch: Win32
+            
     steps:
       - uses: actions/checkout@v4
 
@@ -45,6 +49,14 @@ jobs:
           cmake -B ${{ steps.strings.outputs.build-output-dir }}
           -DCMAKE_BUILD_TYPE=Release
           -S ${{ github.workspace }}
+
+          - name: Configure CMake
+        
+          args="-DCMAKE_BUILD_TYPE=Release -S ${{ github.workspace }} -B ${{ steps.strings.outputs.build-output-dir }}"
+          if [ "${{ matrix.name }}" == "Windows (32-bit)" ]; then
+          args="$args -A Win32"
+          fi
+          cmake $args
 
       - name: Build
         # Build your program with the given configuration. Note that --config is needed because the default Windows generator is a multi-config generator (Visual Studio generator).
