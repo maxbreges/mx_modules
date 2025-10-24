@@ -45,14 +45,11 @@ jobs:
           echo "build-output-dir=${{ github.workspace }}/build" >> "$GITHUB_OUTPUT"
 
       - name: Configure CMake
-        run: >
-          cmake -B ${{ steps.strings.outputs.build-output-dir }}
-          -DCMAKE_BUILD_TYPE=Release
-          -S ${{ github.workspace }}
-        
+        shell: bash
+        run: |
           args="-DCMAKE_BUILD_TYPE=Release -S ${{ github.workspace }} -B ${{ steps.strings.outputs.build-output-dir }}"
           if [ "${{ matrix.name }}" == "Windows (32-bit)" ]; then
-          args="$args -A Win32"
+            args="$args -A Win32"
           fi
           cmake $args
 
