@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PluginList>
-	<Plugin id="SE:GUIFixedValues_text" name="Fixed Values (text)" category="Experimental/Sub-Controls/Conversion">
+	<Plugin id="SE:GUIFixedValues_text" name="Fixed Values (text)" category="Experimental/Sub-Controls/Control">
 		<GUI>
 			<Pin name="Val" datatype="string" direction="out" autoDuplicate="true" settableOutput="true" autoRename="true"/>
 		</GUI>
 	</Plugin>
-	<Plugin id="SE:GUIFixedValues_int" name="Fixed Values (int)" category="Experimental/Sub-Controls/Conversion">
+	<Plugin id="SE:GUIFixedValues_int" name="Fixed Values (int)" category="Experimental/Sub-Controls/Control">
 		<GUI>
 			<Pin name="Val" datatype="int" direction="out" autoDuplicate="true" settableOutput="true" autoRename="true"/>
 		</GUI>
 	</Plugin>
-	<Plugin id="SE:GUIFixedValues_int64" name="Fixed Values (int64)" category="Experimental/Sub-Controls/Conversion">
+	<Plugin id="SE:GUIFixedValues_int64" name="Fixed Values (int64)" category="Experimental/Sub-Controls/Control">
 		<GUI>
 			<Pin name="Val" datatype="int64" direction="out" autoDuplicate="true" settableOutput="true" autoRename="true"/>
 		</GUI>
 	</Plugin>
-	<Plugin id="SE:GUIFixedValues_float" name="Fixed Values (float)" category="Experimental/Sub-Controls/Conversion">
+	<Plugin id="SE:GUIFixedValues_float" name="Fixed Values (float)" category="Experimental/Sub-Controls/Control">
 		<GUI>
 			<Pin name="Val" datatype="float" direction="out" autoDuplicate="true" settableOutput="true" autoRename="true"/>
 		</GUI>
 	</Plugin>
-	<Plugin id="SE:GUIFixedValues_bool" name="Fixed Values (bool)" category="Experimental/Sub-Controls/Conversion">
+	<Plugin id="SE:GUIFixedValues_bool" name="Fixed Values (bool)" category="Experimental/Sub-Controls/Control">
 		<GUI>
 			<Pin name="Val" datatype="bool" direction="out" autoDuplicate="true" settableOutput="true" autoRename="true"/>
 		</GUI>
