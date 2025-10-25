@@ -61,5 +61,6 @@ include(plugin_helper.cmake)
 #add_subdirectory(RectangleX)
 #add_subdirectory(Volts2Float)
 #add_subdirectory(MIDIDelta32)
-add_subdirectory(FixedValuesGui)
+#add_subdirectory(FixedValuesGui)
 #add_subdirectory(TextEntry)
+
