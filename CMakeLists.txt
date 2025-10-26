@@ -63,4 +63,5 @@ include(plugin_helper.cmake)
 #add_subdirectory(MIDIDelta32)
 #add_subdirectory(FixedValuesGui)
 #add_subdirectory(TextEntry)
+add_subdirectory(Comparator)
 

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PluginList>
+    <Plugin id="ComparatorEq" name="Comparator" category="mx/Modifiers">
+        <Audio>
+            <Pin name="Input A" datatype="float" rate="audio" default="0.8"/>
+            <Pin name="Input B" datatype="float" rate="audio" default="0.8"/>
+            <Pin name="Output" datatype="float" rate="audio" direction="out"/>
+            <Pin name="Hi Out Val" datatype="float" default="5"/>
+			<Pin name="Equal Out Val" datatype="float" default="0.0"/>
+            <Pin name="Lo Out Val" datatype="float" default="-5"/>
+        </Audio>
+    </Plugin>
+</PluginList>
