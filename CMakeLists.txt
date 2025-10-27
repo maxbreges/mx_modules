@@ -64,4 +64,5 @@ include(plugin_helper.cmake)
 #add_subdirectory(FixedValuesGui)
 #add_subdirectory(TextEntry)
 #add_subdirectory(Comparator)
+add_subdirectory(DisplayList)
 
