@@ -65,4 +65,5 @@ include(plugin_helper.cmake)
 #add_subdirectory(TextEntry)
 #add_subdirectory(Comparator)
 #add_subdirectory(DisplayList)
+add_subdirectory(SubControlsXp)
 
