@@ -58,13 +58,11 @@ include(plugin_helper.cmake)
 
 # here is where you list your modules
 #add_subdirectory(VectorCircle)
-#add_subdirectory(RectangleX)
 #add_subdirectory(Volts2Float)
 #add_subdirectory(MIDIDelta32)
 #add_subdirectory(FixedValuesGui)
 #add_subdirectory(TextEntry)
 #add_subdirectory(Comparator)
 #add_subdirectory(DisplayList)
-add_subdirectory(SubControlsXp)
 #add_subdirectory(Concat)
 
