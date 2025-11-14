@@ -14,7 +14,7 @@ using namespace gmpi_gui;
 using namespace GmpiDrawing;
 using namespace JmUnicodeConversions;
 
-GMPI_REGISTER_GUI(MP_SUB_TYPE_GUI2, SliderGui, L"Slider1");
+GMPI_REGISTER_GUI(MP_SUB_TYPE_GUI2, SliderGui, L"SE Slider1");
 SE_DECLARE_INIT_STATIC_FILE(Slider_Gui);
 
 int32_t SliderGui::OnRender(GmpiDrawing_API::IMpDeviceContext* drawingContext)
