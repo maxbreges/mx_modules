@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document file_format="150000" vst_user_email="Jeff McClintock" vst_preset_count="64">
+    <master_container type="Container" handle="507696770" name="Main" ViewOpenFlags="256" skin="default">
+        <plugs>
+            <plug idx="7"/>
+        </plugs>
+        <structRect l="0" r="0" t="0" b="0"/>
+        <PatchManager>
+            <ProgramNames/>
+            <Parameters>
+                <param type="6" handle="46276405" shortName="Level Adj Input 2" vstParameterNumber="1" module="425352875" moduleParamId="0" RangeMaximum="20">
+                    <patch-list>
+                        <s repeat="128">20</s>
+                    </patch-list>
+                </param>
+                <param type="10" handle="254402561" shortName="Capture Data A" ignorePC="true" private="true" stateful="false" isPolyphonic="true" module="1095043340" moduleParamId="0"/>
+                <param type="10" handle="954528485" shortName="Capture Data B" ignorePC="true" private="true" stateful="false" isPolyphonic="true" module="1095043340" moduleParamId="1"/>
+                <param type="6" handle="1060567330" shortName="Freq Analyser2 Signal in" vstParameterNumber="0" module="782925597" moduleParamId="0">
+                    <patch-list>
+                        <s repeat="128">0</s>
+                    </patch-list>
+                </param>
+                <param type="6" handle="1466053485" shortName="Oscillator3 Pitch" vstParameterNumber="3" module="1839154844" moduleParamId="0" RangeMaximum="11">
+                    <patch-list>
+                        <s>4</s>
+                        <s repeat="127">6</s>
+                    </patch-list>
+                </param>
+                <param type="10" handle="1665026127" shortName="Capture Data A" ignorePC="true" private="true" stateful="false" module="1243195199" moduleParamId="0"/>
+                <param type="4" handle="1782853050" shortName="polyDetect" ignorePC="true" private="true" stateful="false" module="1095043340" moduleParamId="2"/>
+                <param type="10" handle="1865652040" private="true" hostControl="49">
+                    <patch-list>
+                        <s repeat="128"></s>
+                    </patch-list>
+                </param>
+                <param type="10" handle="2057193604" shortName="Capture Data A" ignorePC="true" private="true" stateful="false" module="63482606" moduleParamId="0"/>
+            </Parameters>
+        </PatchManager>
+        <modules>
+            <module type="Container" handle="1246895071" ViewOpenFlags="256" skin="default">
+                <plugs>
+                    <plug idx="7"/>
+                </plugs>
+                <structRect l="119" r="179" t="67" b="91"/>
+                <modules>
+                    <module type="Fixed Values" handle="1913036713">
+                        <plugs>
+                            <plug name="Input 2" default="5"/>
+                            <plug/>
+                        </plugs>
+                        <structRect l="264" r="348" t="564" b="588"/>
+                    </module>
+                    <module type="Level Adj" handle="2018292422" muted="true">
+                        <plugs>
+                            <plug default="20" idx="1"/>
+                        </plugs>
+                        <structRect l="384" r="444" t="624" b="660"/>
+                    </module>
+                    <module type="Oscillator" handle="1144288750">
+                        <plugs>
+                            <plug default="0.001"/>
+                            <plug default="0" idx="2"/>
+                            <plug default="1" idx="6"/>
+                        </plugs>
+                        <structRect l="252" r="336" t="648" b="732"/>
+                    </module>
+                    <module type="SE Freq Analyser3" handle="63482606">
+                        <plugs>
+                            <plug default="-120" idx="2"/>
+                            <plug default="4096" idx="5"/>
+                        </plugs>
+                        <structRect l="492" r="996" t="504" b="768"/>
+                        <panelRect l="632" r="632" t="552" b="552"/>
+                    </module>
+                    <module type="SE Freq Analyser2" handle="1243195199">
+                        <plugs>
+                            <plug default="0" idx="1"/>
+                            <plug default="-120" idx="3"/>
+                            <plug default="4096" idx="6"/>
+                        </plugs>
+                        <structRect l="492" r="984" t="228" b="493"/>
+                        <panelRect l="200" r="906" t="59" b="382"/>
+                    </module>
+                    <module type="Oscillator" handle="1278095132">
+                        <plugs>
+                            <plug default="6"/>
+                            <plug default="2" idx="2"/>
+                            <plug default="1" idx="6"/>
+                        </plugs>
+                        <structRect l="110" r="194" t="293" b="377"/>
+                    </module>
+                    <module type="Level Adj" handle="164218981">
+                        <plugs>
+                            <plug default="20" idx="1"/>
+                        </plugs>
+                        <structRect l="218" r="278" t="330" b="366"/>
+                    </module>
+                    <module type="SE Scope3 XP" handle="1095043340">
+                        <structRect l="468" r="876" t="0" b="154"/>
+                        <panelRect l="527" r="627" t="720" b="820"/>
+                    </module>
+                    <module type="Slider" handle="1839154844" name="Pitch">
+                        <plugs>
+                            <plug default="0" idx="4"/>
+                            <plug default="0"/>
+                            <plug default="0" idx="7"/>
+                            <plug default="0" idx="12"/>
+                            <plug parameterId="-1"/>
+                            <plug parameterId="-1"/>
+                        </plugs>
+                        <structRect l="108" r="192" t="144" b="232"/>
+                        <panelRect l="669" r="719" t="670" b="738"/>
+                    </module>
+                    <module type="Slider" handle="425352875">
+                        <plugs>
+                            <plug default="0" idx="4"/>
+                            <plug default="0"/>
+                            <plug default="0" idx="7"/>
+                            <plug default="0" idx="12"/>
+                            <plug parameterId="-1"/>
+                            <plug parameterId="-1"/>
+                        </plugs>
+                        <structRect l="164" r="248" t="553" b="641"/>
+                        <panelRect l="721" r="771" t="730" b="798"/>
+                    </module>
+                    <module type="Slider" handle="782925597" name="DC">
+                        <plugs>
+                            <plug default="0" idx="4"/>
+                            <plug default="0"/>
+                            <plug default="0" idx="7"/>
+                            <plug default="0" idx="12"/>
+                            <plug parameterId="-1"/>
+                            <plug parameterId="-1"/>
+                        </plugs>
+                        <structRect l="108" r="192" t="672" b="760"/>
+                        <panelRect l="789" r="839" t="782" b="850"/>
+                    </module>
+                    <module type="IO Mod" handle="1347797772">
+                        <plugs>
+                            <plug/>
+                        </plugs>
+                        <structRect l="20" r="80" t="20" b="32"/>
+                    </module>
+                </modules>
+                <lines>
+                    <line type="Line" handle="674577882" lineType="1" fMod="164218981" tMod="1095043340" fPlg="2" tPlg="6"/>
+                    <line type="Line" handle="2019905756" lineType="1" fMod="1278095132" tMod="164218981" fPlg="3"/>
+                    <line type="Line" handle="89232380" lineType="1" fMod="425352875" tMod="164218981" fPlg="6" tPlg="1"/>
+                    <line type="Line" handle="619052448" lineType="1" fMod="1839154844" tMod="1278095132" fPlg="6"/>
+                    <line type="Line" handle="1309088685" lineType="1" fMod="782925597" tMod="1243195199" fPlg="6" tPlg="5"/>
+                    <line type="Line" handle="67813891" lineType="1" fMod="164218981" tMod="1243195199" fPlg="2" tPlg="5"/>
+                    <line type="Line" handle="102888913" lineType="1" fMod="164218981" tMod="2018292422" fPlg="2"/>
+                    <line type="Line" handle="1568527559" lineType="1" fMod="1144288750" tMod="2018292422" fPlg="3" tPlg="1"/>
+                    <line type="Line" handle="250868576" lineType="1" fMod="1913036713" tMod="2018292422" tPlg="1"/>
+                    <line type="Line" handle="150224590" lineType="1" fMod="2018292422" tMod="63482606" fPlg="2" tPlg="4"/>
+                    <line type="Line" handle="1971828922" lineType="1" fMod="164218981" tMod="63482606" fPlg="2" tPlg="4"/>
+                    <line type="Line" handle="1383691528" lineType="1" fMod="782925597" tMod="63482606" fPlg="6" tPlg="4"/>
+                </lines>
+                <PanelWndPosition l="0" r="0" t="0" b="0"/>
+                <PanelLocation l="-89" r="1149" t="435" b="1535"/>
+                <StructLocation l="-74" r="1300" t="72" b="954"/>
+                <PanelScroll x="0" y="0"/>
+                <StructScroll x="0" y="0"/>
+                <PanelWndOffset cx="-99999" cy="-99999"/>
+                <panel_rect l="10" r="310" t="10" b="210"/>
+            </module>
+        </modules>
+        <lines/>
+        <PanelWndPosition l="0" r="0" t="0" b="0"/>
+        <PanelLocation l="453" r="1513" t="719" b="2116"/>
+        <StructLocation l="14" r="342" t="22" b="214"/>
+        <PanelScroll x="0" y="0"/>
+        <StructScroll x="0" y="0"/>
+        <PanelWndOffset cx="-99999" cy="-99999"/>
+        <panel_rect l="10" r="310" t="10" b="210"/>
+    </master_container>
+    <PluginList>
+        <Plugin id="Container" class="1" name="Container" flags="384" category="">
+            <Audio>
+                <Pin name="Spare" datatype="float" rate="audio" autoRename="true" autoDuplicate="true" isContainerIoPlug="true"/>
+                <Pin name="Polyphony" datatype="enum" default="6" private="true" isMinimised="true" metadata="range 1,128"/>
+                <Pin name="MIDI Automation" datatype="bool" private="true" isMinimised="true"/>
+                <Pin name="Show Controls" datatype="enum" private="true" isMinimised="true" metadata="Off,On Panel,On Module"/>
+            </Audio>
+            <GUI>
+                <Pin name="Controls on Parent" datatype="bool" direction="out" isMinimised="true"/>
+                <Pin name="Controls on Module" datatype="bool" noAutomation="true"/>
+                <Pin name="Visible" datatype="bool"/>
+                <Pin name="Ignore Program Change" datatype="bool" noAutomation="true"/>
+            </GUI>
+        </Plugin>
+        <Plugin id="Fixed Values" class="1" name="Fixed Values (Volts)" flags="4352" category="Controls">
+            <Audio>
+                <Pin name="Spare Value" datatype="float" rate="audio" direction="out" autoRename="true" settableOutput="true" autoDuplicate="true"/>
+            </Audio>
+        </Plugin>
+        <Plugin id="IO Mod" class="1" name="IO Mod" flags="4356" category="">
+            <Audio>
+                <Pin name="Spare" datatype="float" rate="audio" autoRename="true" autoDuplicate="true" isContainerIoPlug="true"/>
+            </Audio>
+        </Plugin>
+        <Plugin id="Level Adj" class="1" name="Level Adj" flags="4352" category="Modifiers">
+            <Audio>
+                <Pin name="Input 1" datatype="float" rate="audio" default="0.8" linearInput="true"/>
+                <Pin name="Input 2" datatype="float" rate="audio" default="0.8" linearInput="true"/>
+                <Pin name="Output" datatype="float" rate="audio" direction="out"/>
+            </Audio>
+        </Plugin>
+        <Plugin id="Oscillator" class="1" name="Oscillator" flags="4352" category="Waveform">
+            <Audio>
+                <Pin name="Pitch" datatype="float" rate="audio" default="0.5" metadata="100, 0, 10, 0"/>
+                <Pin name="Pulse Width" datatype="float" rate="audio" default="0.5"/>
+                <Pin name="Waveform" datatype="enum" default="1" metadata="Sine, Saw, Ramp, Triangle, Pulse,White Noise,Pink Noise"/>
+                <Pin name="Audio Out" datatype="float" rate="audio" direction="out"/>
+                <Pin name="Sync" datatype="float" rate="audio" metadata="100, 0, 5, -5"/>
+                <Pin name="Phase Mod" datatype="float" rate="audio" metadata="100, 0, 10, 0"/>
+                <Pin name="Freq Scale" datatype="enum" isMinimised="true" metadata="1 Volt/Octave, 1 Volt/kHz "/>
+                <Pin name="PM Depth" datatype="float" rate="audio" default="0.5" metadata="100, 0, 10, 0"/>
+                <Pin name="Smooth Peaks (Gibbs Effect)" datatype="bool" default="1" isMinimised="true"/>
+                <Pin name="Sync X-Fade (Anti Alias)" datatype="bool" default="1" isMinimised="true"/>
+            </Audio>
+        </Plugin>
+        <Plugin id="SE Freq Analyser2" name="Freq Analyser2" flags="384" category="Controls">
+            <Parameters>
+                <Parameter id="0" datatype="blob" name="Capture Data A" private="true" ignorePatchChange="true" persistant="false"/>
+            </Parameters>
+            <Audio>
+                <Pin name="Capture Data A" datatype="blob" direction="out" private="true" parameterId="0"/>
+                <Pin name="Signal in" datatype="float" rate="audio" linearInput="true"/>
+                <Pin name="FFT Size" datatype="enum" default="2048" isMinimised="true" metadata="1024=1024,2048=2048,4096=4096,8192=8192,16384=16384"/>
+                <Pin name="Update Rate" datatype="enum" default="10" isMinimised="true" metadata="1 Hz=1,5 Hz=5,10 Hz=10,20 Hz=20,40 Hz=40,60 Hz=60"/>
+            </Audio>
+            <GUI graphicsApi="GmpiGui">
+                <Pin name="Capture Data A" datatype="blob" private="true" parameterId="0"/>
+                <Pin name="Mode" datatype="enum" isMinimised="true" metadata="Log,Linear"/>
+                <Pin name="dB High" datatype="int" default="20" isMinimised="true"/>
+                <Pin name="dB Low" datatype="int" default="-80" isMinimised="true"/>
+            </GUI>
+        </Plugin>
+        <Plugin id="SE Freq Analyser3" name="Freq Analyser3" flags="384" category="Debug">
+            <Parameters>
+                <Parameter id="0" datatype="blob" name="Capture Data A" private="true" ignorePatchChange="true" persistant="false"/>
+            </Parameters>
+            <Audio>
+                <Pin name="Capture Data A" datatype="blob" direction="out" private="true" parameterId="0"/>
+                <Pin name="Signal in" datatype="float" rate="audio" linearInput="true"/>
+                <Pin name="FFT Size" datatype="enum" default="2048" isMinimised="true" metadata="1024=1024,2048=2048,4096=4096,8192=8192,16384=16384"/>
+                <Pin name="Update Rate" datatype="enum" default="10" isMinimised="true" metadata="1 Hz=1,5 Hz=5,10 Hz=10,20 Hz=20,30 Hz=30,40 Hz=40,60 Hz=60"/>
+            </Audio>
+            <GUI graphicsApi="GmpiGui">
+                <Pin name="Capture Data A" datatype="blob" private="true" parameterId="0"/>
+                <Pin name="dB High" datatype="int" default="20" isMinimised="true"/>
+                <Pin name="dB Low" datatype="int" default="-80" isMinimised="true"/>
+            </GUI>
+        </Plugin>
+        <Plugin id="SE Scope3 XP" name="Scope3" flags="384" category="Controls">
+            <Parameters>
+                <Parameter id="0" datatype="blob" name="Capture Data A" private="true" ignorePatchChange="true" isPolyphonic="true" persistant="false"/>
+                <Parameter id="1" datatype="blob" name="Capture Data B" private="true" ignorePatchChange="true" isPolyphonic="true" persistant="false"/>
+                <Parameter id="2" datatype="bool" name="polyDetect" private="true" ignorePatchChange="true" persistant="false"/>
+            </Parameters>
+            <Audio>
+                <Pin name="Capture Data A" datatype="blob" direction="out" private="true" isPolyphonic="true" parameterId="0"/>
+                <Pin name="Capture Data B" datatype="blob" direction="out" private="true" isPolyphonic="true" parameterId="1"/>
+                <Pin name="Signal A" datatype="float" rate="audio"/>
+                <Pin name="Signal B" datatype="float" rate="audio"/>
+                <Pin name="VoiceActive" datatype="float" private="true" isPolyphonic="true" hostConnect="Voice/Active"/>
+                <Pin name="polydetect" datatype="bool" direction="out" private="true" parameterId="2"/>
+            </Audio>
+            <GUI graphicsApi="GmpiGui">
+                <Pin name="Capture Data A" datatype="blob" private="true" isPolyphonic="true" parameterId="0"/>
+                <Pin name="Capture Data B" datatype="blob" private="true" isPolyphonic="true" parameterId="1"/>
+                <Pin id="3" name="VoiceGate" datatype="float" private="true" isPolyphonic="true" hostConnect="Voice/Gate"/>
+                <Pin name="polydetect" datatype="bool" private="true" parameterId="2"/>
+            </GUI>
+        </Plugin>
+        <Plugin id="Slider" class="1" name="Slider" flags="4480" category="Controls">
+            <Parameters>
+                <Parameter id="0" datatype="float" name="patchValue"/>
+            </Parameters>
+            <Audio>
+                <Pin name="Channel" datatype="enum" default="-1" private="true" ignorePatchChange="true" metadata="All=-1,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16"/>
+                <Pin name="MIDI In" datatype="midi" private="true"/>
+                <Pin name="MIDI Out" datatype="midi" direction="out" private="true"/>
+                <Pin name="MIDI Controller ID" datatype="enum" default="-1" private="true"/>
+                <Pin name="Ignore Program Change" datatype="bool" private="true"/>
+                <Pin name="MIDI NRPN" datatype="enum" private="true" metadata="range 0,16255"/>
+                <Pin name="Signal Out" datatype="float" rate="audio" direction="out" autoConfigureParameter="true"/>
+                <Pin name="Lo Value" datatype="float" private="true"/>
+                <Pin name="Hi Value" datatype="float" default="10" private="true"/>
+                <Pin name="Appearance" datatype="enum" default="1" isMinimised="true" metadata="None=-1,Plain Slider, Vert Slider, Horiz Slider, Knob, Button, Button (toggle),Plain Button, Small Knob, Small Button, Small Button (Toggle)"/>
+                <Pin name="Show Readout" datatype="bool" default="1" isMinimised="true"/>
+                <Pin name="Show Title On Panel" datatype="bool" default="1" isMinimised="true"/>
+                <Pin name="patchValue" datatype="float" private="true" parameterId="0"/>
+            </Audio>
+            <GUI>
+                <Pin id="13" name="patchValue" datatype="float" direction="out" private="true" parameterId="0"/>
+                <Pin name="Hint" datatype="string" direction="out" isMinimised="true"/>
+            </GUI>
+        </Plugin>
+    </PluginList>
+</Document>
