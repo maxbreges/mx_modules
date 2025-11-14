@@ -34,6 +34,5 @@ build_gmpi_plugin(
         ../sharedLegacyWidgets/TextWidget.h
         ../sharedLegacyWidgets/Widget.cpp
         ../sharedLegacyWidgets/Widget.h
-	../sharedLegacyWidgets/WidgetHost.h
 
 )
