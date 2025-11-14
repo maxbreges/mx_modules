@@ -66,6 +66,8 @@ include(plugin_helper.cmake)
 #add_subdirectory(DisplayList)
 #add_subdirectory(Concat)
 #add_subdirectory(ORGateGuiLR)
-add_subdirectory(ControlsXp)
+add_subdirectory(Slider1)
+
+
 
 

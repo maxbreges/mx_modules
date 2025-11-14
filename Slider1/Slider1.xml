@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PluginList>
+    <Plugin id="SE Slider1" name="Slider 1" category="Controls">
+        <Parameters>
+            <Parameter id="0" datatype="float" name="s1"/>
+        </Parameters>
+        <Audio>
+            <Pin name="S0" datatype="float" private="true" parameterId="0"/>
+            <Pin id="6" name="Signal Out" datatype="float" rate="audio" direction="out" autoConfigureParameter="true"/>
+        </Audio>
+        <GUI graphicsApi="GmpiGui">
+            <Pin id="13" name="Value In" datatype="float" private="true" parameterId="0"/>
+            <Pin name="Hint" datatype="string" private="true"/>
+            <Pin name="Appearance" datatype="enum" isMinimised="true" metadata="Slider,H-Slider=2,Knob,Button, Button (toggle), Knob (small)=7, Button(small), Button (small toggle)"/>
+            <Pin name="Title" datatype="string" isMinimised="true"/>
+            <Pin name="Normalized" datatype="float" private="true" parameterId="0" parameterField="Normalized"/>
+            <Pin name="Name In" datatype="string" private="true" parameterId="0" parameterField="ShortName"/>
+            <Pin name="Menu Items" datatype="string" private="true" parameterId="0" parameterField="MenuItems"/>
+            <Pin name="Menu Selection" datatype="int" private="true" parameterId="0" parameterField="MenuSelection"/>
+            <Pin name="Mouse Down" datatype="bool" private="true" parameterId="0" parameterField="Grab"/>
+            <Pin name="RangeLo" datatype="float" private="true" parameterId="0" parameterField="RangeMinimum"/>
+            <Pin name="RangeHi" datatype="float" private="true" parameterId="0" parameterField="RangeMaximum"/>
+            <Pin name="Show Readout" datatype="bool" default="1" isMinimised="true"/>
+            <Pin name="Show Title On Panel" datatype="bool" default="1" isMinimised="true"/>
+        </GUI>
+    </Plugin>
+</PluginList>
