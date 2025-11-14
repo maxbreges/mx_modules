@@ -1,3 +1,5 @@
+#pragma once
+
 #ifndef SLIDER1GUI_H_INCLUDED
 #define SLIDER1GUI_H_INCLUDED
 

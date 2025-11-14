@@ -1,3 +1,4 @@
+#pragma once
 #ifndef SLIDER1_H_INCLUDED
 #define SLIDER1_H_INCLUDED
 
