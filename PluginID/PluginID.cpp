@@ -4,65 +4,66 @@ using namespace gmpi;
 
 class PluginID final : public MpBase2
 {
-	// Unique ID for each instance
-	uint64_t instanceId = {};
+    // Unique ID for each instance
+    uint64_t instanceId = {};
 
-	// Static counter to generate unique IDs
-	static uint64_t nextInstanceId;
+    // Static counter to generate unique IDs
+    static uint64_t nextInstanceId;
 
-	AudioInPin pinSignalin;
-	IntOutPin pinIntID;
-	IntOutPin pinInstanceID;
+    // Static counter for active instances
+    static int activeInstanceCount;
 
+    AudioInPin pinSignalin;
+    IntOutPin pinIntID;
+    IntOutPin pinInstanceID;
+    IntOutPin pinActiveInstanceCount;
 
 public:
-	PluginID()
-	{
-		initializePin( pinSignalin );
-		initializePin( pinIntID );
-		initializePin(pinInstanceID);
-		instanceId = ++nextInstanceId;
-	}
+    PluginID()
+    {
+        initializePin(pinSignalin);
+        initializePin(pinIntID);
+        initializePin(pinInstanceID);
+        initializePin(pinActiveInstanceCount);
+        instanceId = ++nextInstanceId;
 
-	int32_t retrievePluginID(int value)
-	{
-		auto handle = getHost()->getHandle(value);
-		pinIntID = value;
-		pinInstanceID = instanceId;
-		return handle; // 
-	}
+        // Increment active instance count
+         ++activeInstanceCount;
+    }
 
-/*	void subProcess( int sampleFrames )
-	{
-		// get pointers to in/output buffers.
-		auto signalin = getBuffer(pinSignalin);
+    ~PluginID()
+    {
+        // Decrement active instance count
+        --activeInstanceCount;
+        --nextInstanceId;
+    }
 
+    static int getActiveInstanceCount()
+    {
+        return activeInstanceCount;
+    }
 
-		for( int s = sampleFrames; s > 0; --s )
-		{
-			// TODO: Signal processing goes here.
+    int32_t retrievePluginID(int value)
+    {
+        auto handle = getHost()->getHandle(value);
+        pinIntID = value;
+        pinInstanceID = instanceId;
+        pinActiveInstanceCount = activeInstanceCount;
+        return handle;
+    }
 
-			// Increment buffer pointers.
-			++signalin;
-			
-		}
-	}*/
+    void onSetPins() override
+    {
+        if (pinSignalin.isStreaming())
+        {
+        }
 
-	void onSetPins() override
-	{
-		// Check which pins are updated.
-		if( pinSignalin.isStreaming() )
-		{
-		}
-
-		retrievePluginID(static_cast<int32_t>(pinSignalin));
-
-		// Set processing method.
-		//setSubProcess(&PluginID::subProcess);
-	}
+        retrievePluginID(static_cast<int32_t>(pinSignalin));
+    }
 };
 
 uint64_t PluginID::nextInstanceId = 0;
+int PluginID::activeInstanceCount = 0; // Initialize the static counter
 
 namespace
 {
