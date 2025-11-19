@@ -63,19 +63,19 @@ public:
 		}
 		pinSteps.isUpdated();
 		{	
-			if (pinSteps)
+/*			if (pinSteps)
 			{
 				step_num = pinSteps;
-			}
+			}*/
 
-			/*	if ((pinSteps) != step_num)
+				if ((pinSteps) != step_num)
 			{
 				step_num = (pinSteps);
 				if (step_num)
 				{
 					step_num = pinSteps;
 				}
-			}	*/
+			}	
 		}
 
 		pinReset.isUpdated();
