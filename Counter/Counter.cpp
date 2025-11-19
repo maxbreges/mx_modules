@@ -57,25 +57,17 @@ public:
 	{
 		// Check which pins are updated.
 
-
 		pinClock.isUpdated();
 		{			
 		}
+
 		pinSteps.isUpdated();
 		{	
-/*			if (pinSteps)
+			if (pinSteps)
 			{
 				step_num = pinSteps;
-			}*/
-
-				if ((pinSteps) != step_num)
-			{
-				step_num = (pinSteps);
-				if (step_num)
-				{
-					step_num = pinSteps;
-				}
-			}	
+				counter == step_num;
+			}
 		}
 
 		pinReset.isUpdated();
@@ -88,7 +80,6 @@ public:
 					counter = -1;
 				}
 			}
-
 		}
 		// Set state of output audio pins.
 		pinCount.setStreaming(true);
