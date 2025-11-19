@@ -4,7 +4,7 @@
 		<Audio>
 			<Pin name="Clock" datatype="float" rate="audio"/>
 			<Pin name="Reset" datatype="float" rate="audio"/>
-			<Pin name="Steps" datatype="float" rate="audio" default="10"/>
+			<Pin name="Steps" datatype="int" rate="audio" default="7"/>
 			<Pin name="Count" datatype="float" rate="audio" direction="out"/>
 		</Audio>
 	</Plugin>

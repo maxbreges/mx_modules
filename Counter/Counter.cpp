@@ -6,7 +6,7 @@ class Counter final : public MpBase2
 {
 	AudioInPin pinClock;
 	AudioInPin pinReset;
-	AudioInPin pinSteps;
+	IntInPin pinSteps;
 	AudioOutPin pinCount;
 
 private:
@@ -30,12 +30,12 @@ public:
 
 		auto clock = getBuffer(pinClock);
 		auto reset = getBuffer(pinReset);
-		auto steps = getBuffer(pinSteps);
+		//auto steps = getBuffer(pinSteps);
 		auto count = getBuffer(pinCount);
 
 		for (int s = sampleFrames; s > 0; s--)
 		{
-			step_num = *steps * 10.f;
+			step_num = pinSteps; //*steps * 10.f;
 			bool new_gate = *clock++ > 0.0f;
 			if (new_gate != gate_state)
 			{
@@ -48,7 +48,7 @@ public:
 					}
 				}
 			}
-			steps++;
+			//steps++;
 			*count++ = counter*0.1f;			
 		}
 	}
@@ -63,6 +63,8 @@ public:
 		}
 		pinSteps.isUpdated();
 		{
+			if ((pinSteps) != step_num)
+				step_num = pinSteps;
 		}
 
 		pinReset.isUpdated();
