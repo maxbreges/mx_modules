@@ -59,8 +59,10 @@ public:
 
 
 		pinClock.isUpdated();
+		{			
+		}
+		pinSteps.isUpdated();
 		{
-			
 		}
 
 		pinReset.isUpdated();
