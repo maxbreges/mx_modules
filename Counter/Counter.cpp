@@ -66,7 +66,7 @@ public:
 			if (pinSteps)
 			{
 				step_num = pinSteps;
-				counter = step_num;
+				counter = step_num - 1;
 			}
 		}
 
