@@ -70,7 +70,7 @@ public:
 				reset_state = (pinReset);
 				if (reset_state)
 				{
-					counter = 0;
+					counter = -1;
 				}
 			}
 
