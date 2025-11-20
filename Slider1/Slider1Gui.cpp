@@ -64,7 +64,7 @@ void SliderGui::onSetAppearance()
 		pixelAccurateHitTest = false;
 		break;
 	case 1:
-		imageFile = "vslider_med";
+		imageFile = "transp";
 		pixelAccurateHitTest = false;
 		break;
 	case 2:

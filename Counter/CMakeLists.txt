@@ -8,3 +8,4 @@ build_gmpi_plugin(
     SOURCE_FILES 
         Counter.cpp
 )
+

@@ -66,9 +66,9 @@ include(plugin_helper.cmake)
 #add_subdirectory(DisplayList)
 #add_subdirectory(Concat)
 #add_subdirectory(ORGateGuiLR)
-#add_subdirectory(Slider1)
+add_subdirectory(Slider1)
 #add_subdirectory(PluginID)
-add_subdirectory(Counter)
+#add_subdirectory(Counter)
 
 
 
