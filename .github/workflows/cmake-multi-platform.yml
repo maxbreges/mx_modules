@@ -57,13 +57,6 @@ jobs:
         # Build your program with the given configuration. Note that --config is needed because the default Windows generator is a multi-config generator (Visual Studio generator).
         run: cmake --build ${{ steps.strings.outputs.build-output-dir }} --config Release
 
-      - name: Read project name
-        id: project_name
-        shell: bash
-        run: |
-          PROJECT_NAME=$(cat "${{ steps.strings.outputs.build-output-dir }}/project_name.txt")
-          echo "project_name=$PROJECT_NAME" >> "$GITHUB_OUTPUT"
-
       - name: Upload SEM
         uses: actions/upload-artifact@v4
         with:
