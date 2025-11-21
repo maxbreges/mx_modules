@@ -81,5 +81,11 @@ public:
 
 namespace
 {
-	auto r = Register<ORGateGuiGui>::withId(L"OR Gate GuiLR");
+    bool r[] =
+    {
+    Register<ORGateGuiGui>::withId(L"OR Gate GuiROutLIn"),
+    Register<ORGateGuiGui>::withId(L"OR Gate GuiLOutRIn"),
+    Register<ORGateGuiGui>::withId(L"OR Gate GuiROutRIn"),
+    Register<ORGateGuiGui>::withId(L"OR Gate GuiLOutLIn"),
+    };
 }
