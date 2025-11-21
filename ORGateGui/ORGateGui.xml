@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PluginList>
-    <Plugin id="OR Gate GuiROutLIn" name="&gt;OR Gate&gt;" category="mx/Sub-Controls/Logic">
+    <Plugin id="OR Gate GuiROutLIn" name="OR &gt;Gate&gt;" category="mx/Sub-Controls/Logic">
         <GUI>
             <Pin name="Bool Out" datatype="bool" direction="out"/>
             <Pin name="Spare In" datatype="bool"  direction="in" autoRename="true" autoDuplicate="true"/>
         </GUI>
     </Plugin>
-	<Plugin id="OR Gate GuiLOutRIn" name="&lt;OR Gate&lt;" category="mx/Sub-Controls/Logic">
+	<Plugin id="OR Gate GuiLOutRIn" name="OR &lt;Gate&lt;" category="mx/Sub-Controls/Logic">
 		<GUI>
 			<Pin name="Bool Out" datatype="bool" direction="in"/>
 			<Pin name="Spare In" datatype="bool"  direction="out" autoRename="true" autoDuplicate="true"/>
@@ -18,7 +18,7 @@
 			<Pin name="Spare In" datatype="bool"  direction="out" autoRename="true" autoDuplicate="true"/>
 		</GUI>
 	</Plugin>
-	<Plugin id="OR Gate GuiLOutLIn" name="&gt;&gt;OR Gate" category="mx/Sub-Controls/Logic">
+	<Plugin id="OR Gate GuiLOutLIn" name="OR &gt;&gt;Gate" category="mx/Sub-Controls/Logic">
 		<GUI>
 			<Pin name="Bool Out" datatype="bool" direction="in"/>
 			<Pin name="Spare In" datatype="bool"  direction="in" autoRename="true" autoDuplicate="true"/>
