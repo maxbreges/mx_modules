@@ -57,7 +57,7 @@ public:
         }
     }
 
-    int32_t initialize() override
+    virtual int32_t MP_STDCALL initialize() override
     {
         // Retrieve total number of pins from the host
         int32_t pinCount = 0;
@@ -91,7 +91,7 @@ public:
         return SeGuiInvisibleBase::initialize(); // Ensure to call base class's initialize method
     }
 
-    int32_t setPin(int32_t pinId, int32_t voice, int32_t size, const void* data) override
+    virtual int32_t MP_STDCALL setPin(int32_t pinId, int32_t voice, int32_t size, const void* data) override
     {
         // Call the base class's setPin method
         int32_t r = SeGuiInvisibleBase::setPin(pinId, voice, size, data);
