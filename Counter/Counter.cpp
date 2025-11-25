@@ -6,7 +6,7 @@ class Counter final : public MpBase2
 {
 	AudioInPin pinClock;
 	AudioInPin pinReset;
-	IntInPin pinSteps;
+	AudioInPin pinSteps;
 	AudioOutPin pinCount;
 
 private:
