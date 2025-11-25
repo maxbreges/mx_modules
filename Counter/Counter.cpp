@@ -35,7 +35,7 @@ public:
 
 		for (int s = sampleFrames; s > 0; s--)
 		{
-			step_num = pinSteps; //*steps * 10.f;
+			step_num = *steps * 10.f;
 			bool new_gate = *clock++ > 0.0f;
 			if (new_gate != gate_state)
 			{
@@ -49,7 +49,7 @@ public:
 				}
 			}
 			steps++;
-			count++ = counter*0.1f;			
+			*count++ = counter*0.1f;			
 		}
 	}
 
@@ -57,17 +57,10 @@ public:
 	{
 		// Check which pins are updated.
 
-		pinClock.isUpdated();
-		{			
-		}
 
-		pinSteps.isUpdated();
-		{	
-			if (pinSteps)
-			{
-				step_num = pinSteps;
-				counter = step_num - 1;
-			}
+		pinClock.isUpdated();
+		{
+			
 		}
 
 		pinReset.isUpdated();
@@ -80,6 +73,7 @@ public:
 					counter = -1;
 				}
 			}
+
 		}
 		// Set state of output audio pins.
 		pinCount.setStreaming(true);
