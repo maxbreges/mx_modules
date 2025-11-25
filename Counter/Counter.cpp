@@ -49,7 +49,7 @@ public:
 				}
 			}
 			steps++;
-			*count++ = counter*0.1f;			
+			count++ = counter*0.1f;			
 		}
 	}
 
