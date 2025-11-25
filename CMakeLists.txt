@@ -57,6 +57,7 @@ endif()
 include(plugin_helper.cmake)
 
 # here is where you list your modules
+add_subdirectory(AnimPosToHex)
 #add_subdirectory(mxCircle)
 #add_subdirectory(Volts2Float)
 #add_subdirectory(MIDIDelta)
