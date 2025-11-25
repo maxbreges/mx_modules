@@ -20,7 +20,6 @@ protected:
 	IntGuiPin pinColorByDatatype;
 	FloatGuiPin pinCircleSize;
 	FloatGuiPin pinLineThickness;
-	StringGuiPin pinColor;
 
 	GmpiDrawing_API::MP1_POINT pointPrevious;
 	const float WHEEL_SCROLL_FACTOR = 1.0f / 12000.0f;
@@ -39,11 +38,11 @@ protected:
 
 		switch (colorIndex)
 		{
-		case 0: pinColor = "FFFF00FF"; break;
-		case 1: pinColor = "FF777777"; break;
-		case 2: pinColor = "FF00FFFF"; break;
-		case 3: pinColor = "FFFFA500"; break;
-		case 4: pinColor = "FFFF0000"; break;
+		case 0: pinBackground = "FFFF00FF"; break;
+		case 1: pinBackground = "FF777777"; break;
+		case 2: pinBackground = "FF00FFFF"; break;
+		case 3: pinBackground = "FFFFA500"; break;
+		case 4: pinBackground = "FFFF0000"; break;
 		}
 		invalidateRect();
 	}
@@ -138,7 +137,6 @@ public:
 	{
 		initializePin(pinCircleSize, static_cast<MpGuiBaseMemberPtr2>(&VectorKnobXGui::onSetCircleSize));
 		initializePin(pinLineThickness);
-		initializePin(pinColor);
 	}
  
 	void calcDimensionsBg(Point& centerBg, float& radiusBg, float& thicknessBg) {
@@ -169,8 +167,8 @@ public:
 		calcDimensions(center, radius, thickness);
 
 		auto brushLine = g.CreateSolidColorBrush(Color::FromHexString(pinForeground));
-		auto gradientBrushBg = g.CreateRadialGradientBrush(Color::FromHexString(pinColor), Color::Black, center, radiusBg);
-		auto gradientBrush = g.CreateRadialGradientBrush(Color::FromHexString(pinColor), Color::Black, center, radius);
+		auto gradientBrushBg = g.CreateRadialGradientBrush(Color::FromHexString(pinBackground), Color::Black, center, radiusBg);
+		auto gradientBrush = g.CreateRadialGradientBrush(Color::FromHexString(pinBackground), Color::Black, center, radius);
 
 		const float startAngle = 35.f; // Angle between "straight-down" and start of arc
 		const float startAngleRadians = startAngle * (3.14159265358979323846f / 180.f); // Convert to radians

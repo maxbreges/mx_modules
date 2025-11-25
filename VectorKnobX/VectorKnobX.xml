@@ -12,7 +12,6 @@
             <Pin name="Color by datatype" datatype="enum" metadata="blob,bool,float,int,string" isMinimised="true"/>
 			<Pin name="Circle Size" datatype="float" default="0.99" isMinimised="false"/>
 			<Pin name="Line Thickness" datatype="float" default="3" isMinimised="true"/>
-			<Pin name="Color" datatype="string" private="true"/>
 		</GUI>
     </Plugin>
 </PluginList>
