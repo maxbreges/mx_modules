@@ -30,7 +30,7 @@ public:
 
 		auto clock = getBuffer(pinClock);
 		auto reset = getBuffer(pinReset);
-		//auto steps = getBuffer(pinSteps);
+		auto steps = getBuffer(pinSteps);
 		auto count = getBuffer(pinCount);
 
 		for (int s = sampleFrames; s > 0; s--)
@@ -48,7 +48,7 @@ public:
 					}
 				}
 			}
-			//steps++;
+			steps++;
 			*count++ = counter*0.1f;			
 		}
 	}
