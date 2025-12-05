@@ -3,6 +3,8 @@
 #define _USE_MATH_DEFINES
 #include <math.h>
 #include "../shared/xplatform_modifier_keys.h"
+#include <chrono>
+#include <thread>
 
 SE_DECLARE_INIT_STATIC_FILE(VectorKnobXGui);
 
@@ -32,21 +34,71 @@ protected:
 		invalidateRect();
 	}
 
-	void onSetColorByDatatype()
+	void onSetBackground()
+	{
+		invalidateRect();
+	}
+
+/*	void onSetColorByDatatype()
 	{
 		int colorIndex = pinColorByDatatype.getValue();
 
 		switch (colorIndex)
 		{
-		case 0: pinBackground = "FFFF00FF"; break;
-		case 1: pinBackground = "FF777777"; break;
-		case 2: pinBackground = "FF00FFFF"; break;
-		case 3: pinBackground = "FFFFA500"; break;
+		case 0: pinBackground = "FFFF55FF"; break;
+		case 1: pinBackground = "FF555555"; break;
+		case 2: pinBackground = "FF00CCEE"; break;
+		case 3: pinBackground = "FFFF8800"; break;
 		case 4: pinBackground = "FFFF0000"; break;
 		}
 		invalidateRect();
 	}
+*/
+private:
+	int count = 0;
+	bool processing = false;
+public:
 
+	void onSetMouseDown()
+	{
+		if (pinMouseDown)
+		{
+			++count;
+
+
+
+			int countDown = 250;
+			// Start countdown in a separate thread
+			std::thread([this, countDown]()
+				{
+					std::this_thread::sleep_for(std::chrono::milliseconds(countDown));
+
+					// Reset count when countdown is finished
+					{
+						count = 0;
+					}
+
+				}
+			).detach();
+		}
+
+		{
+			if (count == 2)
+			{
+				pinAnimationPosition = 0.5f;
+
+				// Check if we are already processing
+				if (processing)
+				{
+					return; // Ignore further clicks while processing
+				}
+
+				processing = true; // Set flag to indicate processing has started
+			}
+			// Reset the processing flag to allow future clicks
+			processing = false;
+		}
+	}
 
 	VectorBase()
 	{
@@ -57,10 +109,10 @@ protected:
 		initializePin(pinHint);
 		initializePin(pinMenuItems);
 		initializePin(pinMenuSelection);
-		initializePin(pinMouseDown);
-		initializePin(pinBackground, static_cast<MpGuiBaseMemberPtr2>(&VectorBase::onSetColorByDatatype));
+		initializePin(pinMouseDown, static_cast<MpGuiBaseMemberPtr2>(&VectorBase::onSetMouseDown));
+		initializePin(pinBackground, static_cast<MpGuiBaseMemberPtr2>(&VectorBase::onSetBackground));
 		initializePin(pinForeground, static_cast<MpGuiBaseMemberPtr2>(&VectorBase::onSetAnimationPosition));
-		initializePin(pinColorByDatatype, static_cast<MpGuiBaseMemberPtr2>(&VectorBase::onSetColorByDatatype));
+		//initializePin(pinColorByDatatype, static_cast<MpGuiBaseMemberPtr2>(&VectorBase::onSetColorByDatatype));
 	}
 
 	int32_t MP_STDCALL onMouseWheel(int32_t flags, int32_t delta, MP1_POINT point) override
@@ -124,10 +176,17 @@ class VectorKnobXGui : public VectorBase
 	}
 
 	float circleSize = 0.93f;
+	float lineThickness = 3.0f;
 
 	void onSetCircleSize()
 	{
 		circleSize = clamp(pinCircleSize, 0.0f, 1.0f);
+		invalidateRect();
+	}
+
+	void onSetLineThickness()
+	{
+		lineThickness = clamp(pinLineThickness, 0.0f, 10.0f);
 		invalidateRect();
 	}
 
@@ -136,7 +195,7 @@ public:
 	VectorKnobXGui()
 	{
 		initializePin(pinCircleSize, static_cast<MpGuiBaseMemberPtr2>(&VectorKnobXGui::onSetCircleSize));
-		initializePin(pinLineThickness);
+		initializePin(pinLineThickness, static_cast<MpGuiBaseMemberPtr2>(&VectorKnobXGui::onSetLineThickness));
 	}
  
 	void calcDimensionsBg(Point& centerBg, float& radiusBg, float& thicknessBg) {
@@ -196,7 +255,7 @@ public:
 		// Draw the top circle
 		g.FillCircle(center, radius + thickness * .5f, gradientBrush);
 		// Draw the line
-		g.DrawLine(center, movingPoint, brushLine, pinLineThickness, strokeStyle);
+		g.DrawLine(center, movingPoint, brushLine, lineThickness, strokeStyle);
 
 		return gmpi::MP_OK;
 	

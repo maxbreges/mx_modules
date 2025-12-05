@@ -9,5 +9,4 @@ build_gmpi_plugin(
 	  VectorKnobXGui.cpp
 	${se_sdk_folder}/it_enum_list.h
         ${se_sdk_folder}/it_enum_list.cpp
-	${se_shared_folder}/unicode_conversion.h
 )
