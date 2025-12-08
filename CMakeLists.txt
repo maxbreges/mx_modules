@@ -70,7 +70,8 @@ include(plugin_helper.cmake)
 #add_subdirectory(BooleanLogic)
 #add_subdirectory(Slider1)
 #add_subdirectory(PluginID)
-add_subdirectory(VectorKnobX)
+#add_subdirectory(VectorKnobX)
+add_subdirectory(MidiRecorder)
 
 
 
