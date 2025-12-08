@@ -206,11 +206,7 @@ public:
 
 			const auto fullFilename = host.resolveFilename(fname);
 
-			if (fopen_s(&outputStream, fullFilename.c_str(), "wb") != 0)
-			{
-				outputStream = nullptr; // or nullptr in modern C++
-				// handle error, e.g., show message box
-			}
+			outputStream = fopen(fullFilename.c_str(), "wb");
 
 			if (!outputStream)
 			{
