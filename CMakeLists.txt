@@ -72,6 +72,8 @@ include(plugin_helper.cmake)
 #add_subdirectory(PluginID)
 #add_subdirectory(VectorKnobX)
 #add_subdirectory(MidiRecorder)
+add_subdirectory(PopUpMenu)
+
 
 
 
