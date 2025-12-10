@@ -19,13 +19,13 @@ jobs:
         include:
          # - name: Linux
          #   os: ubuntu-22.04
-          - name: macOS
-            os: macos-latest
-          - name: Windows (64-bit)
+         # - name: macOS
+         #   os: macos-latest
+         # - name: Windows (64-bit)
+         #   os: windows-latest
+          - name: Windows (32-bit)
             os: windows-latest
-          #- name: Windows (32-bit)
-          #  os: windows-latest
-          #  arch: Win32
+            arch: Win32
             
     steps:
       - uses: actions/checkout@v4
