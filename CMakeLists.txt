@@ -66,7 +66,7 @@ include(plugin_helper.cmake)
 #add_subdirectory(TextEntry)
 #add_subdirectory(Comparator)
 #add_subdirectory(DisplayList)
-add_subdirectory(DisplayText)
+#add_subdirectory(DisplayText)
 #add_subdirectory(Concat)
 #add_subdirectory(BooleanLogic)
 #add_subdirectory(Slider1)
@@ -74,6 +74,8 @@ add_subdirectory(DisplayText)
 #add_subdirectory(VectorKnobX)
 #add_subdirectory(MidiRecorder)
 #add_subdirectory(PopUpMenu)
+add_subdirectory (ScaleDegree)
+
 
 
 
