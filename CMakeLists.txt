@@ -75,6 +75,7 @@ include(plugin_helper.cmake)
 #add_subdirectory(MidiRecorder)
 #add_subdirectory(PopUpMenu)
 #add_subdirectory (ScaleDegree)
+add_subdirectory(Brightness)
 
 
 
