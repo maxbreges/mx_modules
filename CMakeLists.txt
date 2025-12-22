@@ -74,9 +74,9 @@ include(plugin_helper.cmake)
 #add_subdirectory(VectorKnobX)
 #add_subdirectory(MidiRecorder)
 #add_subdirectory(PopUpMenu)
-#add_subdirectory (ScaleDegree)
+add_subdirectory (ScaleDegree)
 #add_subdirectory(Brightness)
-add_subdirectory(ListToText)
+#add_subdirectory(ListToText)
 
 
 
