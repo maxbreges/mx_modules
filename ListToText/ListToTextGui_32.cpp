@@ -23,12 +23,12 @@ class ListToTextGui final : public SeGuiInvisibleBase
     StringGuiPin pinItemList;
     StringGuiPin pinItemText;
 
-    // Helper function to split UTF-8 string into wstring based on commas
-    std::vector<std::string> splitString(const std::string& s, char delimiter)
+    // Helper function to split a wstring based on a wchar_t delimiter
+    std::vector<std::wstring> splitString(const std::wstring& s, wchar_t delimiter)
     {
-        std::vector<std::string> tokens;
-        std::stringstream ss(s);
-        std::string item;
+        std::vector<std::wstring> tokens;
+        std::wstringstream ss(s);
+        std::wstring item;
         while (std::getline(ss, item, delimiter))
         {
             tokens.push_back(item);
@@ -38,19 +38,16 @@ class ListToTextGui final : public SeGuiInvisibleBase
 
     void updateItemText()
     {
-        // Convert the UTF-8 string from pinItemList to wstring
-        std::wstring listW = pinItemList; // Assuming pinItemList supports implicit conversion to wstring
+        // Use pinItemList directly as a wstring
+        std::wstring listW = pinItemList;
 
-        std::wstring_convert<std::codecvt_utf8<wchar_t>> converter;
-        std::string listStr = converter.to_bytes(listW);
-
-        auto items = splitString(listStr, ',');
+        auto items = splitString(listW, L',');
 
         int choiceIndex = static_cast<int>(pinChoice);
 
         if (choiceIndex >= 0 && choiceIndex < static_cast<int>(items.size()))
         {
-            pinItemText = items[choiceIndex];
+            pinItemText = items[choiceIndex]; // pinItemText is wstring
         }
         else
         {
