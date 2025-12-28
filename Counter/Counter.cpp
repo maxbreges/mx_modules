@@ -8,15 +8,15 @@ class Counter final : public MpBase2
 	AudioInPin pinReset;
 	AudioInPin pinSteps;
 	AudioOutPin pinCount;
-	AudioInPin pinResetVal;
+	IntInPin pinResetVal;
+	BoolOutPin pinClockOut;
 
 private:
 	bool gate_state = false;
 	bool reset_state = false;
 	int counter = 0;
 	int step_num = 0;
-	int resetValue = 0;
-
+	
 public:
 	Counter()
 	{
@@ -25,6 +25,7 @@ public:
 		initializePin(pinSteps);
 		initializePin(pinCount);
 		initializePin(pinResetVal);
+		initializePin(pinClockOut);
 	}
 
 	void subProcess(int sampleFrames)
@@ -35,7 +36,6 @@ public:
 		auto reset = getBuffer(pinReset);
 		auto steps = getBuffer(pinSteps);
 		auto count = getBuffer(pinCount);
-		auto resetVal = getBuffer(pinResetVal);
 
 		for (int s = sampleFrames; s > 0; s--)
 		{
@@ -47,14 +47,16 @@ public:
 				if (gate_state)
 				{
 					counter++;
-					if (counter == step_num) {
-						counter = 0;
+					if (counter == step_num) 
+					{
+						pinClockOut.setValue(true, getBlockPosition());
+						counter = 0;						
+						pinClockOut.setValue(false, getBlockPosition() + 1);
 					}
 				}
 			}
 			steps++;
-			*count++ = counter*0.1f;	
-			resetValue = *resetVal++;
+			*count++ = counter * 0.1f;
 		}
 	}
 
@@ -62,10 +64,8 @@ public:
 	{
 		// Check which pins are updated.
 
-
 		pinClock.isUpdated();
 		{
-			
 		}
 
 		pinReset.isUpdated();
@@ -75,7 +75,7 @@ public:
 				reset_state = (pinReset);
 				if (reset_state)
 				{
-					counter = resetValue*0.1;
+					counter = pinResetVal.getValue();
 				}
 			}
 
