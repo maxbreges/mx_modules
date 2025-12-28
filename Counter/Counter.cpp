@@ -8,12 +8,14 @@ class Counter final : public MpBase2
 	AudioInPin pinReset;
 	AudioInPin pinSteps;
 	AudioOutPin pinCount;
+	AudioInPin pinResetVal;
 
 private:
 	bool gate_state = false;
 	bool reset_state = false;
 	int counter = 0;
 	int step_num = 0;
+	int resetValue = 0;
 
 public:
 	Counter()
@@ -22,6 +24,7 @@ public:
 		initializePin(pinReset);
 		initializePin(pinSteps);
 		initializePin(pinCount);
+		initializePin(pinResetVal);
 	}
 
 	void subProcess(int sampleFrames)
@@ -32,6 +35,7 @@ public:
 		auto reset = getBuffer(pinReset);
 		auto steps = getBuffer(pinSteps);
 		auto count = getBuffer(pinCount);
+		auto resetVal = getBuffer(pinResetVal);
 
 		for (int s = sampleFrames; s > 0; s--)
 		{
@@ -49,7 +53,8 @@ public:
 				}
 			}
 			steps++;
-			*count++ = counter*0.1f;			
+			*count++ = counter*0.1f;	
+			resetValue = *resetVal++;
 		}
 	}
 
@@ -70,7 +75,7 @@ public:
 				reset_state = (pinReset);
 				if (reset_state)
 				{
-					counter = -1;
+					counter = resetValue*0.1;
 				}
 			}
 

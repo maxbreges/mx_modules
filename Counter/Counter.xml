@@ -6,6 +6,7 @@
 			<Pin name="Reset" datatype="float" rate="audio"/>
 			<Pin name="Steps" datatype="float" rate="audio" default="10"/>
 			<Pin name="Count" datatype="float" rate="audio" direction="out"/>
+			<Pin name="Reset value" datatype="float" rate="audio" isMinimised="true"/>
 		</Audio>
 	</Plugin>
 </PluginList>
