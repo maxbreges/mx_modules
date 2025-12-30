@@ -14,6 +14,8 @@ class MajorsAscGui final : public SeGuiInvisibleBase
 	void onSetRoot()
 	{
 		root = pinRootIn;
+		onSetMode();
+		onSetNote();
 	}
 
  	void onSetMode()
