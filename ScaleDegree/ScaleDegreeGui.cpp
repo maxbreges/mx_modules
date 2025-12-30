@@ -46,7 +46,7 @@ class MajorsAscGui final : public SeGuiInvisibleBase
 			switch (root)
 			{
 			case 0: pinKeyList = "C,C♯,D,D♯,E,F,F♯,G,G♯,A,B♭,B"; break;
-			case 1: pinKeyList = L"C♯,C♯♯,D♯,D♯♯,E♯,F♯,F♯♯,G♯,G♯♯,A♯,B♮,B♯"; break;
+			case 1: pinKeyList = "C♯,C♯♯,D♯,D♯♯,E♯,F♯,F♯♯,G♯,G♯♯,A♯,B♮,B♯"; break;
 			case 2: pinKeyList = "D,D♯,E,E♯,F♯,G,G♯,A,A♯,B,C♮,C♯"; break;
 			case 3: pinKeyList = "E♭,E♮,F,F♯,G,A♭,A♮,B♭,B♮,C,D♭,D"; break;
 			case 4: pinKeyList = "E,E♯,F♯,F♯♯,G♯,A,A♯,B,B♯,C♯,D♮,D♯"; break;
