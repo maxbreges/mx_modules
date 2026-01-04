@@ -204,9 +204,20 @@ public:
 				fname += L".mid";
 			}
 
-			const auto fullFilename = host.resolveFilename(fname);
+			wchar_t fullFilename[500];
+			getHost()->resolveFilename(fname.c_str(), sizeof(fullFilename) / sizeof(fullFilename[0]), fullFilename);
 
-			outputStream = fopen(fullFilename.c_str(), "wb");
+
+			//const auto fullFilename = host.resolveFilename(fname);
+			//outputStream = fopen(fullFilename.c_str(), "wb");
+
+#ifdef _WIN32
+			outputStream = _wfopen(fullFilename, L"wb");
+#else
+			std::wstring_convert<std::codecvt_utf8<wchar_t> > stringConverter;
+			auto utf8Filename = stringConverter.to_bytes(fullFilename);
+			outputStream = fopen(utf8Filename.c_str(), "wb");
+#endif
 
 			if (!outputStream)
 			{
