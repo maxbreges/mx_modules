@@ -4,7 +4,7 @@
 		<GUI>
 			<Pin name="Text" datatype="string"/>
 			<Pin name="Text" datatype="string"/>
-			<Pin name="Concatenated" datatype="string" direction="out"/>
+			<Pin name="Concatenated" datatype="string"/>
 		</GUI>
 	</Plugin>
 </PluginList>
