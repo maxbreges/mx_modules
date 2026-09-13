@@ -57,29 +57,4 @@ endif()
 include(plugin_helper.cmake)
 
 # here is where you list your modules
-#add_subdirectory(AnimPosToHex)
-#add_subdirectory(Counter)
-#add_subdirectory(mxCircle)
-#add_subdirectory(Volts2Float)
-#add_subdirectory(MIDIDelta)
-#add_subdirectory(FixedValuesGui)
-#add_subdirectory(TextEntry)
-#add_subdirectory(Comparator)
-#add_subdirectory(DisplayList)
-#add_subdirectory(DisplayText)
-#add_subdirectory(Concat)
-#add_subdirectory(BooleanLogic)
-#add_subdirectory(Slider1)
-#add_subdirectory(PluginID)
-#add_subdirectory(VectorKnobX)
-#add_subdirectory(MidiRecorder)
-#add_subdirectory(PopUpMenu)
-#add_subdirectory (ScaleDegree)
-#add_subdirectory(Brightness)
-#add_subdirectory(ListToText)
-
-
-
-
-
-
+add_subdirectory(Counter)

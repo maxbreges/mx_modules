@@ -1,9 +1,0 @@
-<?xml version="1.0" ?>
-<PluginList>
-  <Plugin id="My VoltsToFloats" name="VoltsToFloats" category="mx/Conversion">
-    <Audio>
-      <Pin name="Volts" datatype="float" rate="audio" linearInput="true" />
-      <Pin name="Floats" datatype="float" direction="out" />
-    </Audio>
-  </Plugin>
-</PluginList>

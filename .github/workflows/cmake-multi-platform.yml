@@ -1,7 +1,9 @@
+
 # This starter workflow is for a CMake project running on multiple platforms. There is a different starter workflow if you just want a single platform.
 # See: https://github.com/actions/starter-workflows/blob/main/ci/cmake-single-platform.yml
 name: CMake on multiple platforms
-
+#env:
+ # FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 on:
   push:
     branches: [ "main" ]
@@ -17,16 +19,12 @@ jobs:
       fail-fast: false
       matrix:
         include:
-         # - name: Linux
-         #   os: ubuntu-22.04
+        #  - name: Linux
+        #    os: ubuntu-22.04
           - name: macOS
             os: macos-latest
-          - name: Windows (64-bit)
+          - name: Windows
             os: windows-latest
-        # - name: Windows (32-bit)
-        #   os: windows-latest
-        #   arch: Win32
-            
     steps:
       - uses: actions/checkout@v4
 
@@ -45,13 +43,10 @@ jobs:
           echo "build-output-dir=${{ github.workspace }}/build" >> "$GITHUB_OUTPUT"
 
       - name: Configure CMake
-        shell: bash
-        run: |
-          args="-DCMAKE_BUILD_TYPE=Release -S ${{ github.workspace }} -B ${{ steps.strings.outputs.build-output-dir }}"
-          if [ "${{ matrix.name }}" == "Windows (32-bit)" ]; then
-            args="$args -A Win32"
-          fi
-          cmake $args
+        run: >
+          cmake -B ${{ steps.strings.outputs.build-output-dir }}
+          -DCMAKE_BUILD_TYPE=Release
+          -S ${{ github.workspace }}
 
       - name: Build
         # Build your program with the given configuration. Note that --config is needed because the default Windows generator is a multi-config generator (Visual Studio generator).
