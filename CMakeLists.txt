@@ -59,3 +59,5 @@ include(plugin_helper.cmake)
 # here is where you list your modules
 #add_subdirectory(Counter)
 #add_subdirectory(Og_RandomList)
+add_subdirectory(Og_Button)
+
