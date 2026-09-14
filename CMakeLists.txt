@@ -60,6 +60,6 @@ include(plugin_helper.cmake)
 #add_subdirectory(Counter)
 #add_subdirectory(Og_RandomList)
 #add_subdirectory(Og_Button)
-add_subdirectory(Og_DisplayList)
+#add_subdirectory(Og_DisplayList)
 
 
