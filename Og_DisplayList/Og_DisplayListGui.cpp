@@ -48,6 +48,7 @@ class Og_DisplayListGui final : public gmpi_gui::MpGuiGfxBase
 		else
 		{
 			pinSelection = it.CurrentItem()->text;
+            
 		}
 
 		onSetText();
@@ -91,6 +92,8 @@ class Og_DisplayListGui final : public gmpi_gui::MpGuiGfxBase
  	FloatGuiPin pinCornerRadius;
     BoolGuiPin pinCornerOn;
 
+    BoolGuiPin pinReset;
+
 public:
 	Og_DisplayListGui()
 	{
@@ -108,8 +111,17 @@ public:
 		initializePin( pinPopUpopen );
 		initializePin( pinCornerRadius, static_cast<MpGuiBaseMemberPtr2>(&Og_DisplayListGui::onSetCornerRadius) );
         initializePin(pinCornerOn, static_cast<MpGuiBaseMemberPtr2>(&Og_DisplayListGui::onSetCornerOn));
-   
+
+        initializePin(pinReset, static_cast<MpGuiBaseMemberPtr2>(&Og_DisplayListGui::onSetReset));
     }
+
+    void onSetReset()
+    {
+        pinChoice = 0;
+        onSetChoice();
+    }
+
+
     int32_t MP_STDCALL initialize() override
     {
         onSetChoice();
