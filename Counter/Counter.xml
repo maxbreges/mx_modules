@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PluginList>
+	<Plugin id="Counter" name="Counter" category="mx/Logic">
+		<Audio>
+			<Pin name="Clock" datatype="float" rate="audio"/>
+			<Pin name="Reset" datatype="float" rate="audio"/>
+			<Pin name="Steps" datatype="float" rate="audio" default="10"/>
+			<Pin name="Count" datatype="float" rate="audio" direction="out"/>
+			<Pin name="Reset value" datatype="int" isMinimised="false"/>
+			<Pin name="Pulse on 0" datatype="bool" direction="out"/>
+		</Audio>
+	</Plugin>
+</PluginList>
+
