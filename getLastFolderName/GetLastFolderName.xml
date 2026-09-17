@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PluginList>
+    <Plugin id="My getLastFolderName" name="getLastFolderName" category="mx/Sub-Controls" >
+        <GUI>
+            <Pin name="String In" datatype="string"/>
+            <Pin name="Folder out" datatype="string"/>
+            <Pin name="Folder out" datatype="string" direction="out"/>
+        </GUI>
+    </Plugin>
+</PluginList>
