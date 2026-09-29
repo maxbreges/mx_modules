@@ -1,4 +1,5 @@
 #include "mp_sdk_audio.h"
+#include <cstring>
 
 using namespace gmpi;
 
