@@ -23,12 +23,12 @@ public:
 
 	SignalLogger()
 	{
-		initializePin( pinBlobOut );
+		initializePin(pinBlobOut);
 	}
 
 	int32_t open() override
 	{
-		const int assumedGuiUpdateRateHz = 20;
+		const int assumedGuiUpdateRateHz = 60;
 		recordingBufferSize_ = static_cast<int>(host.getSampleRate()) / assumedGuiUpdateRateHz;
 
 		// Register pins.
@@ -42,7 +42,7 @@ public:
 				continue;
 
 			pinSignal.push_back(std::make_unique<AudioInPin>());
-//			initializePin((*it)->getUniqueId(), *(pinSignal.back()));
+			//			initializePin((*it)->getUniqueId(), *(pinSignal.back()));
 			initializePin(pinIndex++, *(pinSignal.back()));
 		}
 
@@ -54,7 +54,7 @@ public:
 		return MpBase2::open();
 	}
 
-	void subProcess( int sampleFrames )
+	void subProcess(int sampleFrames)
 	{
 		for (int i = 0; i < pinSignal.size(); ++i)
 		{
@@ -95,6 +95,6 @@ public:
 
 namespace
 {
-auto r = Register<SignalLogger>::withId(L"SE Signal Logger");
-auto r2 = Register<SignalLogger>::withId(L"SE Phase Scope");
+	auto r = Register<SignalLogger>::withId(L"SE Signal Logger");
+	auto r2 = Register<SignalLogger>::withId(L"SE Phase Scope");
 }

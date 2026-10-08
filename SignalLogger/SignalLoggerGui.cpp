@@ -155,9 +155,9 @@ public:
 			{
 				auto& chunk = *it;
 
-				for (int i = 0 ; i < framesPerChunk; ++i)
+				for (int i = 0; i < framesPerChunk; ++i)
 				{
-					p.y = chunk.data[chunk.data.size() - traceCount * (i+1) + trace];
+					p.y = chunk.data[chunk.data.size() - traceCount * (i + 1) + trace];
 
 					if (isnan(p.y) || isinf(p.y))
 					{
