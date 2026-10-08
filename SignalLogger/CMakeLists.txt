@@ -10,4 +10,5 @@ build_gmpi_plugin(
         ${PROJECT_NAME}.cpp
         ${PROJECT_NAME}Gui.cpp
         PhaseScopeGui.cpp
+	${se_shared_folder}/GraphHelpers.h
 )
