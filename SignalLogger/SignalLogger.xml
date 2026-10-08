@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<PluginList>
+	<Plugin id="SE Signal Logger" name="Signal Logger" category="Diagnostic">
+    <Parameters>
+      <Parameter id="0" name="Scrolling Waveform" datatype="blob" persistant="false" />
+    </Parameters>
+    <Audio>
+      <Pin name="PM Value Out" direction="out" datatype="blob" parameterId="0" private ="true"/>
+      <Pin name="Signal" direction="in" datatype="float" rate="audio" autoDuplicate="true" autoRename="true"/>
+		</Audio>
+    <GUI graphicsApi="GmpiGui">
+      <Pin name="PM Value In" direction="in" datatype="blob" parameterId="0" />
+      <Pin name="Zoom-X" direction="in" datatype="float" default="0.1" />
+      <Pin name="Zoom-Y" direction="in" datatype="float" default="1.0" />
+      <Pin name="Pan-X" direction="in" datatype="float" default="0" />
+      <Pin name="Pan-Y" direction="in" datatype="float" default="0" />
+    </GUI>
+	</Plugin>
+
+  <Plugin id="SE Phase Scope" name="Phase Scope" category="Controls">
+    <Parameters>
+      <Parameter id="0" name="Phase Scope" datatype="blob" persistant="false" />
+    </Parameters>
+    <Audio>
+      <Pin name="PM Value Out" direction="out" datatype="blob" parameterId="0" private ="true"/>
+      <Pin name="L" direction="in" datatype="float" rate="audio"/>
+      <Pin name="R" direction="in" datatype="float" rate="audio"/>
+    </Audio>
+    <GUI graphicsApi="GmpiGui">
+      <Pin name="PM Value In" direction="in" datatype="blob" parameterId="0" />
+    </GUI>
+	</Plugin>
+  
+</PluginList>
+
+
